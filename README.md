@@ -2,6 +2,8 @@
 RetroCon ( MSX Clone ) modification : RAM 512K
 
 CPLD Source is GPL (by Kevin Cho)
+ - you can freely use, mod, sell this item
+ - but if you mod it, you must open it
 
 Original scheme/CPLD source is made by Kevin Cho, ckevin@hanmail.net
 
