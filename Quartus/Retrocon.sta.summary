@@ -1,0 +1,29 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'WRb'
+Slack : -39.000
+TNS   : -1172.800
+
+Type  : Setup 'IORQb'
+Slack : -20.800
+TNS   : -460.800
+
+Type  : Hold 'WRb'
+Slack : -3.000
+TNS   : -60.000
+
+Type  : Hold 'IORQb'
+Slack : 5.000
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'WRb'
+Slack : -3.500
+TNS   : -364.000
+
+Type  : Minimum Pulse Width 'IORQb'
+Slack : -3.500
+TNS   : -168.000
+
+------------------------------------------------------------

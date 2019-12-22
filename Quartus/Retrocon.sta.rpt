@@ -1,0 +1,1789 @@
+TimeQuest Timing Analyzer report for Retrocon
+Sun Dec 22 21:29:47 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'WRb'
+ 12. Setup: 'IORQb'
+ 13. Hold: 'WRb'
+ 14. Hold: 'IORQb'
+ 15. Minimum Pulse Width: 'WRb'
+ 16. Minimum Pulse Width: 'IORQb'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Propagation Delay
+ 22. Minimum Propagation Delay
+ 23. Output Enable Times
+ 24. Minimum Output Enable Times
+ 25. Output Disable Times
+ 26. Minimum Output Disable Times
+ 27. Setup Transfers
+ 28. Hold Transfers
+ 29. Report TCCS
+ 30. Report RSKM
+ 31. Unconstrained Paths
+ 32. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Retrocon                                                          ;
+; Device Family      ; MAX7000S                                                          ;
+; Device Name        ; EPM7128SLC84-10                                                   ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; IORQb      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { IORQb } ;
+; WRb        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { WRb }   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 25.0 MHz  ; 25.0 MHz        ; WRb        ;      ;
+; 45.87 MHz ; 45.87 MHz       ; IORQb      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; WRb   ; -39.000 ; -1172.800     ;
+; IORQb ; -20.800 ; -460.800      ;
++-------+---------+---------------+
+
+
++--------------------------------+
+; Hold Summary                   ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; WRb   ; -3.000 ; -60.000       ;
+; IORQb ; 5.000  ; 0.000         ;
++-------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; WRb   ; -3.500 ; -364.000      ;
+; IORQb ; -3.500 ; -168.000      ;
++-------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'WRb'                                                                                                                              ;
++---------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                   ; To Node                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[6]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[6]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[0]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[0]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[1]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[1]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[3]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[3]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[2]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[2]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[7]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[7]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[5]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[5]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[4]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[4]  ; IORQb        ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[6]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[6]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[0]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[0]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[1]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[1]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[3]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[3]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[2]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[2]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[7]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[7]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[5]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[5]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[7]    ; slotExp:xsltExp_0|regSS[4]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -39.000 ; PPI8255_SLT:xPPI|REGA[6]    ; slotExp:xsltExp_0|regSS[4]  ; WRb          ; WRb         ; 1.000        ; -19.000    ; 19.000     ;
+; -20.800 ; PPI8255_SLT:xPPI|REGC[6]    ; PPI8255_SLT:xPPI|REGC[6]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.800     ;
+; -20.800 ; PPI8255_SLT:xPPI|REGC[6]    ; PPI8255_SLT:xPPI|REGC[6]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.800     ;
+; -20.500 ; IORQb                       ; slotExp:xsltExp_0|regSS[6]  ; IORQb        ; WRb         ; 0.500        ; 17.500     ; 36.500     ;
+; -20.500 ; IORQb                       ; slotExp:xsltExp_0|regSS[0]  ; IORQb        ; WRb         ; 0.500        ; 17.500     ; 36.500     ;
+; -20.500 ; IORQb                       ; slotExp:xsltExp_0|regSS[1]  ; IORQb        ; WRb         ; 0.500        ; 17.500     ; 36.500     ;
+; -20.500 ; IORQb                       ; slotExp:xsltExp_0|regSS[3]  ; IORQb        ; WRb         ; 0.500        ; 17.500     ; 36.500     ;
+; -20.500 ; IORQb                       ; slotExp:xsltExp_0|regSS[2]  ; IORQb        ; WRb         ; 0.500        ; 17.500     ; 36.500     ;
+; -20.500 ; IORQb                       ; slotExp:xsltExp_0|regSS[7]  ; IORQb        ; WRb         ; 0.500        ; 17.500     ; 36.500     ;
+; -20.500 ; IORQb                       ; slotExp:xsltExp_0|regSS[5]  ; IORQb        ; WRb         ; 0.500        ; 17.500     ; 36.500     ;
+; -20.500 ; IORQb                       ; slotExp:xsltExp_0|regSS[4]  ; IORQb        ; WRb         ; 0.500        ; 17.500     ; 36.500     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[7]    ; PPI8255_SLT:xPPI|REGA[7]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[6] ; PPI8255_SLT:xPPI|regCTRL[6] ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[0]    ; PPI8255_SLT:xPPI|REGA[0]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[1] ; PPI8255_SLT:xPPI|regCTRL[1] ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[3] ; PPI8255_SLT:xPPI|regCTRL[3] ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[2]    ; PPI8255_SLT:xPPI|REGA[2]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[2]    ; PPI8255_SLT:xPPI|REGC[2]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[2] ; PPI8255_SLT:xPPI|regCTRL[2] ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[3]    ; PPI8255_SLT:xPPI|REGC[3]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[3]    ; PPI8255_SLT:xPPI|REGA[3]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[1]    ; PPI8255_SLT:xPPI|REGC[1]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[1]    ; PPI8255_SLT:xPPI|REGA[1]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[0]    ; PPI8255_SLT:xPPI|REGC[0]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[0] ; PPI8255_SLT:xPPI|regCTRL[0] ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[6]    ; PPI8255_SLT:xPPI|REGA[6]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[7]    ; PPI8255_SLT:xPPI|REGC[7]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[5] ; PPI8255_SLT:xPPI|regCTRL[5] ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[5]    ; PPI8255_SLT:xPPI|REGC[5]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[5]    ; PPI8255_SLT:xPPI|REGA[5]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[4] ; PPI8255_SLT:xPPI|regCTRL[4] ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[4]    ; PPI8255_SLT:xPPI|REGC[4]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[4]    ; PPI8255_SLT:xPPI|REGA[4]    ; IORQb        ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; IORQb                       ; slotExp:xsltExp_0|regSS[6]  ; IORQb        ; WRb         ; 1.000        ; 17.500     ; 36.500     ;
+; -20.000 ; IORQb                       ; slotExp:xsltExp_0|regSS[0]  ; IORQb        ; WRb         ; 1.000        ; 17.500     ; 36.500     ;
+; -20.000 ; IORQb                       ; slotExp:xsltExp_0|regSS[1]  ; IORQb        ; WRb         ; 1.000        ; 17.500     ; 36.500     ;
+; -20.000 ; IORQb                       ; slotExp:xsltExp_0|regSS[3]  ; IORQb        ; WRb         ; 1.000        ; 17.500     ; 36.500     ;
+; -20.000 ; IORQb                       ; slotExp:xsltExp_0|regSS[2]  ; IORQb        ; WRb         ; 1.000        ; 17.500     ; 36.500     ;
+; -20.000 ; IORQb                       ; slotExp:xsltExp_0|regSS[7]  ; IORQb        ; WRb         ; 1.000        ; 17.500     ; 36.500     ;
+; -20.000 ; IORQb                       ; slotExp:xsltExp_0|regSS[5]  ; IORQb        ; WRb         ; 1.000        ; 17.500     ; 36.500     ;
+; -20.000 ; IORQb                       ; slotExp:xsltExp_0|regSS[4]  ; IORQb        ; WRb         ; 1.000        ; 17.500     ; 36.500     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[7]    ; PPI8255_SLT:xPPI|REGA[7]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[6] ; PPI8255_SLT:xPPI|regCTRL[6] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[0]    ; PPI8255_SLT:xPPI|REGA[0]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[1] ; PPI8255_SLT:xPPI|regCTRL[1] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[3] ; PPI8255_SLT:xPPI|regCTRL[3] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[2]    ; PPI8255_SLT:xPPI|REGA[2]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[2]    ; PPI8255_SLT:xPPI|REGC[2]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[2] ; PPI8255_SLT:xPPI|regCTRL[2] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[3]    ; PPI8255_SLT:xPPI|REGC[3]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[3]    ; PPI8255_SLT:xPPI|REGA[3]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[1]    ; PPI8255_SLT:xPPI|REGC[1]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[1]    ; PPI8255_SLT:xPPI|REGA[1]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[0]    ; PPI8255_SLT:xPPI|REGC[0]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[0] ; PPI8255_SLT:xPPI|regCTRL[0] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[6]    ; PPI8255_SLT:xPPI|REGA[6]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[7]    ; PPI8255_SLT:xPPI|REGC[7]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[5] ; PPI8255_SLT:xPPI|regCTRL[5] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[5]    ; PPI8255_SLT:xPPI|REGC[5]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[5]    ; PPI8255_SLT:xPPI|REGA[5]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[4] ; PPI8255_SLT:xPPI|regCTRL[4] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[4]    ; PPI8255_SLT:xPPI|REGC[4]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[4]    ; PPI8255_SLT:xPPI|REGA[4]    ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; slotExp:xsltExp_0|regSS[6]  ; slotExp:xsltExp_0|regSS[6]  ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; slotExp:xsltExp_0|regSS[0]  ; slotExp:xsltExp_0|regSS[0]  ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; ramMapper:xrMapper|regFE[0] ; ramMapper:xrMapper|regFE[0] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; ramMapper:xrMapper|regFC[0] ; ramMapper:xrMapper|regFC[0] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; ramMapper:xrMapper|regFF[0] ; ramMapper:xrMapper|regFF[0] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; ramMapper:xrMapper|regFD[0] ; ramMapper:xrMapper|regFD[0] ; WRb          ; WRb         ; 1.000        ; 0.000      ; 19.000     ;
++---------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'IORQb'                                                                                                                            ;
++---------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                   ; To Node                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; -20.800 ; PPI8255_SLT:xPPI|REGC[6]    ; PPI8255_SLT:xPPI|REGC[6]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.800     ;
+; -20.800 ; PPI8255_SLT:xPPI|REGC[6]    ; PPI8255_SLT:xPPI|REGC[6]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.800     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[7]    ; PPI8255_SLT:xPPI|REGA[7]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[6] ; PPI8255_SLT:xPPI|regCTRL[6] ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[0]    ; PPI8255_SLT:xPPI|REGA[0]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[1] ; PPI8255_SLT:xPPI|regCTRL[1] ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[3] ; PPI8255_SLT:xPPI|regCTRL[3] ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[2]    ; PPI8255_SLT:xPPI|REGA[2]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[2]    ; PPI8255_SLT:xPPI|REGC[2]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[2] ; PPI8255_SLT:xPPI|regCTRL[2] ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[3]    ; PPI8255_SLT:xPPI|REGC[3]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[3]    ; PPI8255_SLT:xPPI|REGA[3]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[1]    ; PPI8255_SLT:xPPI|REGC[1]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[1]    ; PPI8255_SLT:xPPI|REGA[1]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[0]    ; PPI8255_SLT:xPPI|REGC[0]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[0] ; PPI8255_SLT:xPPI|regCTRL[0] ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[6]    ; PPI8255_SLT:xPPI|REGA[6]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[7]    ; PPI8255_SLT:xPPI|REGC[7]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[5] ; PPI8255_SLT:xPPI|regCTRL[5] ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[5]    ; PPI8255_SLT:xPPI|REGC[5]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[5]    ; PPI8255_SLT:xPPI|REGA[5]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[4] ; PPI8255_SLT:xPPI|regCTRL[4] ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[4]    ; PPI8255_SLT:xPPI|REGC[4]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[4]    ; PPI8255_SLT:xPPI|REGA[4]    ; IORQb        ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[7]    ; PPI8255_SLT:xPPI|REGA[7]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[6] ; PPI8255_SLT:xPPI|regCTRL[6] ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[0]    ; PPI8255_SLT:xPPI|REGA[0]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[1] ; PPI8255_SLT:xPPI|regCTRL[1] ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[3] ; PPI8255_SLT:xPPI|regCTRL[3] ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[2]    ; PPI8255_SLT:xPPI|REGA[2]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[2]    ; PPI8255_SLT:xPPI|REGC[2]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[2] ; PPI8255_SLT:xPPI|regCTRL[2] ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[3]    ; PPI8255_SLT:xPPI|REGC[3]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[3]    ; PPI8255_SLT:xPPI|REGA[3]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[1]    ; PPI8255_SLT:xPPI|REGC[1]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[1]    ; PPI8255_SLT:xPPI|REGA[1]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[0]    ; PPI8255_SLT:xPPI|REGC[0]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[0] ; PPI8255_SLT:xPPI|regCTRL[0] ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[6]    ; PPI8255_SLT:xPPI|REGA[6]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[7]    ; PPI8255_SLT:xPPI|REGC[7]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[5] ; PPI8255_SLT:xPPI|regCTRL[5] ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[5]    ; PPI8255_SLT:xPPI|REGC[5]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[5]    ; PPI8255_SLT:xPPI|REGA[5]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|regCTRL[4] ; PPI8255_SLT:xPPI|regCTRL[4] ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGC[4]    ; PPI8255_SLT:xPPI|REGC[4]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; PPI8255_SLT:xPPI|REGA[4]    ; PPI8255_SLT:xPPI|REGA[4]    ; WRb          ; IORQb       ; 1.000        ; 0.000      ; 19.000     ;
++---------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'WRb'                                                                                                                              ;
++--------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFE[0] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFC[0] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFF[0] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFD[0] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFF[1] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFF[3] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFE[2] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFC[2] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFF[2] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFD[2] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFD[3] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFE[3] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFC[3] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFD[1] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFE[1] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFC[1] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFD[4] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFF[4] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFE[4] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -3.000 ; IORQb                       ; ramMapper:xrMapper|regFC[4] ; IORQb        ; WRb         ; 0.000        ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFE[0] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFC[0] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFF[0] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFD[0] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFF[1] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFF[3] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFE[2] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFC[2] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFF[2] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFD[2] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFD[3] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFE[3] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFC[3] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFD[1] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFE[1] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFC[1] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFD[4] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFF[4] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFE[4] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; -2.500 ; IORQb                       ; ramMapper:xrMapper|regFC[4] ; IORQb        ; WRb         ; -0.500       ; 17.500     ; 17.500     ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[7]    ; PPI8255_SLT:xPPI|REGA[7]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[6] ; PPI8255_SLT:xPPI|regCTRL[6] ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[0]    ; PPI8255_SLT:xPPI|REGA[0]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[1] ; PPI8255_SLT:xPPI|regCTRL[1] ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[3] ; PPI8255_SLT:xPPI|regCTRL[3] ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[2]    ; PPI8255_SLT:xPPI|REGA[2]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[2]    ; PPI8255_SLT:xPPI|REGC[2]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[2] ; PPI8255_SLT:xPPI|regCTRL[2] ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[3]    ; PPI8255_SLT:xPPI|REGC[3]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[3]    ; PPI8255_SLT:xPPI|REGA[3]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[1]    ; PPI8255_SLT:xPPI|REGC[1]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[1]    ; PPI8255_SLT:xPPI|REGA[1]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[0]    ; PPI8255_SLT:xPPI|REGC[0]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[0] ; PPI8255_SLT:xPPI|regCTRL[0] ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[6]    ; PPI8255_SLT:xPPI|REGC[6]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[6]    ; PPI8255_SLT:xPPI|REGA[6]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[7]    ; PPI8255_SLT:xPPI|REGC[7]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[5] ; PPI8255_SLT:xPPI|regCTRL[5] ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[5]    ; PPI8255_SLT:xPPI|REGC[5]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[5]    ; PPI8255_SLT:xPPI|REGA[5]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[4] ; PPI8255_SLT:xPPI|regCTRL[4] ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[4]    ; PPI8255_SLT:xPPI|REGC[4]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[4]    ; PPI8255_SLT:xPPI|REGA[4]    ; IORQb        ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[7]    ; PPI8255_SLT:xPPI|REGA[7]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[6] ; PPI8255_SLT:xPPI|regCTRL[6] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[0]    ; PPI8255_SLT:xPPI|REGA[0]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[1] ; PPI8255_SLT:xPPI|regCTRL[1] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[3] ; PPI8255_SLT:xPPI|regCTRL[3] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[2]    ; PPI8255_SLT:xPPI|REGA[2]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[2]    ; PPI8255_SLT:xPPI|REGC[2]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[2] ; PPI8255_SLT:xPPI|regCTRL[2] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[3]    ; PPI8255_SLT:xPPI|REGC[3]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[3]    ; PPI8255_SLT:xPPI|REGA[3]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[1]    ; PPI8255_SLT:xPPI|REGC[1]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[1]    ; PPI8255_SLT:xPPI|REGA[1]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[0]    ; PPI8255_SLT:xPPI|REGC[0]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[0] ; PPI8255_SLT:xPPI|regCTRL[0] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[6]    ; PPI8255_SLT:xPPI|REGC[6]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[6]    ; PPI8255_SLT:xPPI|REGA[6]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[7]    ; PPI8255_SLT:xPPI|REGC[7]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[5] ; PPI8255_SLT:xPPI|regCTRL[5] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[5]    ; PPI8255_SLT:xPPI|REGC[5]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[5]    ; PPI8255_SLT:xPPI|REGA[5]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|regCTRL[4] ; PPI8255_SLT:xPPI|regCTRL[4] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGC[4]    ; PPI8255_SLT:xPPI|REGC[4]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; PPI8255_SLT:xPPI|REGA[4]    ; PPI8255_SLT:xPPI|REGA[4]    ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; slotExp:xsltExp_0|regSS[6]  ; slotExp:xsltExp_0|regSS[6]  ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; slotExp:xsltExp_0|regSS[0]  ; slotExp:xsltExp_0|regSS[0]  ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; ramMapper:xrMapper|regFE[0] ; ramMapper:xrMapper|regFE[0] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; ramMapper:xrMapper|regFC[0] ; ramMapper:xrMapper|regFC[0] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; ramMapper:xrMapper|regFF[0] ; ramMapper:xrMapper|regFF[0] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; ramMapper:xrMapper|regFD[0] ; ramMapper:xrMapper|regFD[0] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; slotExp:xsltExp_0|regSS[1]  ; slotExp:xsltExp_0|regSS[1]  ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; ramMapper:xrMapper|regFF[1] ; ramMapper:xrMapper|regFF[1] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; slotExp:xsltExp_0|regSS[3]  ; slotExp:xsltExp_0|regSS[3]  ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; ramMapper:xrMapper|regFF[3] ; ramMapper:xrMapper|regFF[3] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; slotExp:xsltExp_0|regSS[2]  ; slotExp:xsltExp_0|regSS[2]  ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; ramMapper:xrMapper|regFE[2] ; ramMapper:xrMapper|regFE[2] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; ramMapper:xrMapper|regFC[2] ; ramMapper:xrMapper|regFC[2] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000  ; ramMapper:xrMapper|regFF[2] ; ramMapper:xrMapper|regFF[2] ; WRb          ; WRb         ; 0.000        ; 0.000      ; 8.000      ;
++--------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'IORQb'                                                                                                                           ;
++-------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                   ; To Node                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+; 5.000 ; PPI8255_SLT:xPPI|REGA[7]    ; PPI8255_SLT:xPPI|REGA[7]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[6] ; PPI8255_SLT:xPPI|regCTRL[6] ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[0]    ; PPI8255_SLT:xPPI|REGA[0]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[1] ; PPI8255_SLT:xPPI|regCTRL[1] ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[3] ; PPI8255_SLT:xPPI|regCTRL[3] ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[2]    ; PPI8255_SLT:xPPI|REGA[2]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[2]    ; PPI8255_SLT:xPPI|REGC[2]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[2] ; PPI8255_SLT:xPPI|regCTRL[2] ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[3]    ; PPI8255_SLT:xPPI|REGC[3]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[3]    ; PPI8255_SLT:xPPI|REGA[3]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[1]    ; PPI8255_SLT:xPPI|REGC[1]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[1]    ; PPI8255_SLT:xPPI|REGA[1]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[0]    ; PPI8255_SLT:xPPI|REGC[0]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[0] ; PPI8255_SLT:xPPI|regCTRL[0] ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[6]    ; PPI8255_SLT:xPPI|REGC[6]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[6]    ; PPI8255_SLT:xPPI|REGA[6]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[7]    ; PPI8255_SLT:xPPI|REGC[7]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[5] ; PPI8255_SLT:xPPI|regCTRL[5] ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[5]    ; PPI8255_SLT:xPPI|REGC[5]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[5]    ; PPI8255_SLT:xPPI|REGA[5]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[4] ; PPI8255_SLT:xPPI|regCTRL[4] ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[4]    ; PPI8255_SLT:xPPI|REGC[4]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[4]    ; PPI8255_SLT:xPPI|REGA[4]    ; IORQb        ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[7]    ; PPI8255_SLT:xPPI|REGA[7]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[6] ; PPI8255_SLT:xPPI|regCTRL[6] ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[0]    ; PPI8255_SLT:xPPI|REGA[0]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[1] ; PPI8255_SLT:xPPI|regCTRL[1] ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[3] ; PPI8255_SLT:xPPI|regCTRL[3] ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[2]    ; PPI8255_SLT:xPPI|REGA[2]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[2]    ; PPI8255_SLT:xPPI|REGC[2]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[2] ; PPI8255_SLT:xPPI|regCTRL[2] ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[3]    ; PPI8255_SLT:xPPI|REGC[3]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[3]    ; PPI8255_SLT:xPPI|REGA[3]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[1]    ; PPI8255_SLT:xPPI|REGC[1]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[1]    ; PPI8255_SLT:xPPI|REGA[1]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[0]    ; PPI8255_SLT:xPPI|REGC[0]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[0] ; PPI8255_SLT:xPPI|regCTRL[0] ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[6]    ; PPI8255_SLT:xPPI|REGC[6]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[6]    ; PPI8255_SLT:xPPI|REGA[6]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[7]    ; PPI8255_SLT:xPPI|REGC[7]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[5] ; PPI8255_SLT:xPPI|regCTRL[5] ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[5]    ; PPI8255_SLT:xPPI|REGC[5]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[5]    ; PPI8255_SLT:xPPI|REGA[5]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|regCTRL[4] ; PPI8255_SLT:xPPI|regCTRL[4] ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGC[4]    ; PPI8255_SLT:xPPI|REGC[4]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; PPI8255_SLT:xPPI|REGA[4]    ; PPI8255_SLT:xPPI|REGA[4]    ; WRb          ; IORQb       ; 0.000        ; 0.000      ; 8.000      ;
++-------+-----------------------------+-----------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'WRb'                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[0]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[0]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[1]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[1]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[2]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[2]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[3]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[3]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[4]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[4]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[5]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[5]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[6]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[6]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[7]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGA[7]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[0]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[0]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[1]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[1]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[2]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[2]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[3]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[3]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[4]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[4]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[5]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[5]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[6]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[6]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[7]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|REGC[7]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[0] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[0] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[1] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[1] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[2] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[2] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[3] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[3] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[4] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[4] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[5] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[5] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[6] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; PPI8255_SLT:xPPI|regCTRL[6] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[0] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[0] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[1] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[1] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[2] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[2] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[3] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[3] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[4] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFC[4] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[0] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[0] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[1] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[1] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[2] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[2] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[3] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[3] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[4] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFD[4] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[0] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[0] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[1] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[1] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[2] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[2] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[3] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[3] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[4] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFE[4] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[0] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[0] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[1] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[1] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[2] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[2] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[3] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[3] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[4] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; ramMapper:xrMapper|regFF[4] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[0]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[0]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[1]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[1]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[2]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[2]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[3]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[3]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[4]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[4]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[5]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[5]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[6]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; WRb   ; Fall       ; slotExp:xsltExp_0|regSS[6]  ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'IORQb'                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[0]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[0]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[1]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[1]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[2]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[2]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[3]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[3]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[4]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[4]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[5]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[5]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[6]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[6]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[7]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGA[7]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[0]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[0]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[1]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[1]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[2]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[2]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[3]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[3]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[4]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[4]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[5]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[5]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[6]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[6]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[7]    ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|REGC[7]    ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[0] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[0] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[1] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[1] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[2] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[2] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[3] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[3] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[4] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[4] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[5] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[5] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[6] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Fall       ; PPI8255_SLT:xPPI|regCTRL[6] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; IORQb ; Rise       ; sysREG[1]                   ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; IORQb ; Rise       ; sysREG[1]                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Rise       ; CLK_IOSYS~0|datain[9]       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Rise       ; CLK_IOSYS~0|datain[9]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; CLK_IOSYS~0|dataout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; CLK_IOSYS~0|dataout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Rise       ; IORQb|dataout               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Rise       ; IORQb|dataout               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Rise       ; comb~23bal|[6]              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Rise       ; comb~23bal|[6]              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; comb~23bal|dataout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; comb~23bal|dataout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; sysREG[1]|[1]               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; sysREG[1]|[1]               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGA[0]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGA[0]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGA[1]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGA[1]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGA[2]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGA[2]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGA[3]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGA[3]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGA[4]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGA[4]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGA[5]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGA[5]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGA[6]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGA[6]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGA[7]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGA[7]|[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGC[0]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGC[0]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGC[1]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGC[1]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGC[2]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGC[2]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGC[3]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGC[3]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGC[4]|[9]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGC[4]|[9]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGC[5]|[9]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGC[5]|[9]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGC[6]|[9]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGC[6]|[9]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|REGC[7]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|REGC[7]|[8]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|regCTRL[0]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|regCTRL[0]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|regCTRL[1]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|regCTRL[1]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|regCTRL[2]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|regCTRL[2]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; IORQb ; Fall       ; xPPI|regCTRL[3]|[5]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; IORQb ; Fall       ; xPPI|regCTRL[3]|[5]         ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++------------+------------+---------+---------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise    ; Fall    ; Clock Edge ; Clock Reference ;
++------------+------------+---------+---------+------------+-----------------+
+; data[*]    ; IORQb      ; -14.000 ; -14.000 ; Rise       ; IORQb           ;
+;  data[7]   ; IORQb      ; -14.000 ; -14.000 ; Rise       ; IORQb           ;
+; addrL[*]   ; IORQb      ; -16.200 ; -16.200 ; Fall       ; IORQb           ;
+;  addrL[0]  ; IORQb      ; -16.200 ; -16.200 ; Fall       ; IORQb           ;
+;  addrL[1]  ; IORQb      ; -16.200 ; -16.200 ; Fall       ; IORQb           ;
+; data[*]    ; IORQb      ; -16.200 ; -16.200 ; Fall       ; IORQb           ;
+;  data[0]   ; IORQb      ; -17.000 ; -17.000 ; Fall       ; IORQb           ;
+;  data[1]   ; IORQb      ; -17.000 ; -17.000 ; Fall       ; IORQb           ;
+;  data[2]   ; IORQb      ; -17.000 ; -17.000 ; Fall       ; IORQb           ;
+;  data[3]   ; IORQb      ; -17.000 ; -17.000 ; Fall       ; IORQb           ;
+;  data[4]   ; IORQb      ; -17.000 ; -17.000 ; Fall       ; IORQb           ;
+;  data[5]   ; IORQb      ; -17.000 ; -17.000 ; Fall       ; IORQb           ;
+;  data[6]   ; IORQb      ; -16.200 ; -16.200 ; Fall       ; IORQb           ;
+;  data[7]   ; IORQb      ; -17.000 ; -17.000 ; Fall       ; IORQb           ;
+; data[*]    ; WRb        ; -14.000 ; -14.000 ; Rise       ; WRb             ;
+;  data[7]   ; WRb        ; -14.000 ; -14.000 ; Rise       ; WRb             ;
+; IORQb      ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+; M1b        ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+; MREQb      ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+; RFSHb      ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+; RSTb       ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+; addr13_8b  ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+; addrH[*]   ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  addrH[14] ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  addrH[15] ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+; addrL[*]   ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+;  addrL[0]  ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  addrL[1]  ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  addrL[2]  ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  addrL[3]  ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+;  addrL[4]  ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+;  addrL[5]  ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+;  addrL[6]  ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+;  addrL[7]  ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+; data[*]    ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  data[0]   ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  data[1]   ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  data[2]   ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  data[3]   ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  data[4]   ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  data[5]   ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  data[6]   ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
+;  data[7]   ; WRb        ; 2.000   ; 2.000   ; Fall       ; WRb             ;
++------------+------------+---------+---------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++------------+------------+---------+---------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise    ; Fall    ; Clock Edge ; Clock Reference ;
++------------+------------+---------+---------+------------+-----------------+
+; data[*]    ; IORQb      ; 19.000  ; 19.000  ; Rise       ; IORQb           ;
+;  data[7]   ; IORQb      ; 19.000  ; 19.000  ; Rise       ; IORQb           ;
+; addrL[*]   ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  addrL[0]  ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  addrL[1]  ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+; data[*]    ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  data[0]   ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  data[1]   ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  data[2]   ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  data[3]   ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  data[4]   ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  data[5]   ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  data[6]   ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+;  data[7]   ; IORQb      ; 22.000  ; 22.000  ; Fall       ; IORQb           ;
+; data[*]    ; WRb        ; 19.000  ; 19.000  ; Rise       ; WRb             ;
+;  data[7]   ; WRb        ; 19.000  ; 19.000  ; Rise       ; WRb             ;
+; IORQb      ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+; M1b        ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+; MREQb      ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+; RFSHb      ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+; RSTb       ; WRb        ; -16.000 ; -16.000 ; Fall       ; WRb             ;
+; addr13_8b  ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+; addrH[*]   ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+;  addrH[14] ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+;  addrH[15] ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+; addrL[*]   ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  addrL[0]  ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  addrL[1]  ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  addrL[2]  ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+;  addrL[3]  ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+;  addrL[4]  ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+;  addrL[5]  ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+;  addrL[6]  ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+;  addrL[7]  ; WRb        ; 3.000   ; 3.000   ; Fall       ; WRb             ;
+; data[*]    ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  data[0]   ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  data[1]   ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  data[2]   ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  data[3]   ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  data[4]   ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  data[5]   ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  data[6]   ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
+;  data[7]   ; WRb        ; 22.000  ; 22.000  ; Fall       ; WRb             ;
++------------+------------+---------+---------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++------------+------------+---------+---------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise    ; Fall    ; Clock Edge ; Clock Reference ;
++------------+------------+---------+---------+------------+-----------------+
+; CK_RTCAL   ; IORQb      ; 56.000  ; 56.000  ; Rise       ; IORQb           ;
+; PSGBC1     ; IORQb      ; 21.000  ; 21.000  ; Rise       ; IORQb           ;
+; PSGBDIR    ; IORQb      ; 21.000  ; 21.000  ; Rise       ; IORQb           ;
+; RAM_CSb    ; IORQb      ; 40.800  ; 40.800  ; Rise       ; IORQb           ;
+; ROMA[*]    ; IORQb      ; 40.000  ; 40.000  ; Rise       ; IORQb           ;
+;  ROMA[0]   ; IORQb      ; 40.000  ; 40.000  ; Rise       ; IORQb           ;
+;  ROMA[1]   ; IORQb      ; 40.000  ; 40.000  ; Rise       ; IORQb           ;
+; ROM_OEb    ; IORQb      ; 40.000  ; 40.000  ; Rise       ; IORQb           ;
+; RTCCSb     ; IORQb      ; 56.000  ; 56.000  ; Rise       ; IORQb           ;
+; SLTbo[*]   ; IORQb      ; 40.000  ; 40.000  ; Rise       ; IORQb           ;
+;  SLTbo[1]  ; IORQb      ; 40.000  ; 40.000  ; Rise       ; IORQb           ;
+;  SLTbo[2]  ; IORQb      ; 40.000  ; 40.000  ; Rise       ; IORQb           ;
+; VDP_CSRb   ; IORQb      ; 21.000  ; 21.000  ; Rise       ; IORQb           ;
+; VDP_CSWb   ; IORQb      ; 21.000  ; 21.000  ; Rise       ; IORQb           ;
+; data[*]    ; IORQb      ; 78.000  ; 78.000  ; Rise       ; IORQb           ;
+;  data[0]   ; IORQb      ; 56.000  ; 56.000  ; Rise       ; IORQb           ;
+;  data[1]   ; IORQb      ; 41.600  ; 41.600  ; Rise       ; IORQb           ;
+;  data[2]   ; IORQb      ; 75.000  ; 75.000  ; Rise       ; IORQb           ;
+;  data[3]   ; IORQb      ; 60.600  ; 60.600  ; Rise       ; IORQb           ;
+;  data[4]   ; IORQb      ; 78.000  ; 78.000  ; Rise       ; IORQb           ;
+;  data[5]   ; IORQb      ; 59.800  ; 59.800  ; Rise       ; IORQb           ;
+;  data[6]   ; IORQb      ; 40.800  ; 40.800  ; Rise       ; IORQb           ;
+;  data[7]   ; IORQb      ; 40.000  ; 40.000  ; Rise       ; IORQb           ;
+; CAPS       ; IORQb      ; 40.000  ; 40.000  ; Fall       ; IORQb           ;
+; CK_RTCAL   ; IORQb      ; 21.000  ; 21.000  ; Fall       ; IORQb           ;
+; PSGBC1     ; IORQb      ; 21.000  ; 21.000  ; Fall       ; IORQb           ;
+; PSGBDIR    ; IORQb      ; 21.000  ; 21.000  ; Fall       ; IORQb           ;
+; RAM_CSb    ; IORQb      ; 59.800  ; 59.800  ; Fall       ; IORQb           ;
+; ROMA[*]    ; IORQb      ; 59.000  ; 59.000  ; Fall       ; IORQb           ;
+;  ROMA[0]   ; IORQb      ; 59.000  ; 59.000  ; Fall       ; IORQb           ;
+;  ROMA[1]   ; IORQb      ; 59.000  ; 59.000  ; Fall       ; IORQb           ;
+; ROM_OEb    ; IORQb      ; 59.800  ; 59.800  ; Fall       ; IORQb           ;
+; RTCCSb     ; IORQb      ; 21.000  ; 21.000  ; Fall       ; IORQb           ;
+; SLTbo[*]   ; IORQb      ; 59.000  ; 59.000  ; Fall       ; IORQb           ;
+;  SLTbo[1]  ; IORQb      ; 59.000  ; 59.000  ; Fall       ; IORQb           ;
+;  SLTbo[2]  ; IORQb      ; 59.000  ; 59.000  ; Fall       ; IORQb           ;
+; SPK        ; IORQb      ; 40.000  ; 40.000  ; Fall       ; IORQb           ;
+; VDP_CSRb   ; IORQb      ; 21.000  ; 21.000  ; Fall       ; IORQb           ;
+; VDP_CSWb   ; IORQb      ; 21.000  ; 21.000  ; Fall       ; IORQb           ;
+; data[*]    ; IORQb      ; 113.000 ; 113.000 ; Fall       ; IORQb           ;
+;  data[0]   ; IORQb      ; 94.000  ; 94.000  ; Fall       ; IORQb           ;
+;  data[1]   ; IORQb      ; 75.000  ; 75.000  ; Fall       ; IORQb           ;
+;  data[2]   ; IORQb      ; 113.000 ; 113.000 ; Fall       ; IORQb           ;
+;  data[3]   ; IORQb      ; 94.000  ; 94.000  ; Fall       ; IORQb           ;
+;  data[4]   ; IORQb      ; 113.000 ; 113.000 ; Fall       ; IORQb           ;
+;  data[5]   ; IORQb      ; 94.000  ; 94.000  ; Fall       ; IORQb           ;
+;  data[6]   ; IORQb      ; 75.000  ; 75.000  ; Fall       ; IORQb           ;
+;  data[7]   ; IORQb      ; 75.000  ; 75.000  ; Fall       ; IORQb           ;
+; keyMAT[*]  ; IORQb      ; 40.000  ; 40.000  ; Fall       ; IORQb           ;
+;  keyMAT[0] ; IORQb      ; 40.000  ; 40.000  ; Fall       ; IORQb           ;
+;  keyMAT[1] ; IORQb      ; 40.000  ; 40.000  ; Fall       ; IORQb           ;
+;  keyMAT[2] ; IORQb      ; 40.000  ; 40.000  ; Fall       ; IORQb           ;
+;  keyMAT[3] ; IORQb      ; 40.000  ; 40.000  ; Fall       ; IORQb           ;
+; CK_RTCAL   ; WRb        ; 56.000  ; 56.000  ; Rise       ; WRb             ;
+; PSGBDIR    ; WRb        ; 21.000  ; 21.000  ; Rise       ; WRb             ;
+; RTCCSb     ; WRb        ; 56.000  ; 56.000  ; Rise       ; WRb             ;
+; VDP_CSWb   ; WRb        ; 21.000  ; 21.000  ; Rise       ; WRb             ;
+; CAPS       ; WRb        ; 40.000  ; 40.000  ; Fall       ; WRb             ;
+; CK_RTCAL   ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+; PSGBDIR    ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+; RAMA[*]    ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+;  RAMA[0]   ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+;  RAMA[1]   ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+;  RAMA[2]   ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+;  RAMA[3]   ; WRb        ; 40.000  ; 40.000  ; Fall       ; WRb             ;
+;  RAMA[4]   ; WRb        ; 40.000  ; 40.000  ; Fall       ; WRb             ;
+; RAM_CSb    ; WRb        ; 59.800  ; 59.800  ; Fall       ; WRb             ;
+; ROMA[*]    ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+;  ROMA[0]   ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+;  ROMA[1]   ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+; ROM_OEb    ; WRb        ; 59.800  ; 59.800  ; Fall       ; WRb             ;
+; SLTbo[*]   ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+;  SLTbo[1]  ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+;  SLTbo[2]  ; WRb        ; 59.000  ; 59.000  ; Fall       ; WRb             ;
+; SPK        ; WRb        ; 40.000  ; 40.000  ; Fall       ; WRb             ;
+; VDP_CSWb   ; WRb        ; 21.000  ; 21.000  ; Fall       ; WRb             ;
+; data[*]    ; WRb        ; 113.000 ; 113.000 ; Fall       ; WRb             ;
+;  data[0]   ; WRb        ; 94.000  ; 94.000  ; Fall       ; WRb             ;
+;  data[1]   ; WRb        ; 75.000  ; 75.000  ; Fall       ; WRb             ;
+;  data[2]   ; WRb        ; 113.000 ; 113.000 ; Fall       ; WRb             ;
+;  data[3]   ; WRb        ; 94.000  ; 94.000  ; Fall       ; WRb             ;
+;  data[4]   ; WRb        ; 113.000 ; 113.000 ; Fall       ; WRb             ;
+;  data[5]   ; WRb        ; 94.000  ; 94.000  ; Fall       ; WRb             ;
+;  data[6]   ; WRb        ; 75.000  ; 75.000  ; Fall       ; WRb             ;
+;  data[7]   ; WRb        ; 75.000  ; 75.000  ; Fall       ; WRb             ;
+; keyMAT[*]  ; WRb        ; 40.000  ; 40.000  ; Fall       ; WRb             ;
+;  keyMAT[0] ; WRb        ; 40.000  ; 40.000  ; Fall       ; WRb             ;
+;  keyMAT[1] ; WRb        ; 40.000  ; 40.000  ; Fall       ; WRb             ;
+;  keyMAT[2] ; WRb        ; 40.000  ; 40.000  ; Fall       ; WRb             ;
+;  keyMAT[3] ; WRb        ; 40.000  ; 40.000  ; Fall       ; WRb             ;
++------------+------------+---------+---------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; CK_RTCAL   ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+; PSGBC1     ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+; PSGBDIR    ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+; RAM_CSb    ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+; ROMA[*]    ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+;  ROMA[0]   ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+;  ROMA[1]   ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+; ROM_OEb    ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+; RTCCSb     ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+; SLTbo[*]   ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+;  SLTbo[1]  ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+;  SLTbo[2]  ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+; VDP_CSRb   ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+; VDP_CSWb   ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+; data[*]    ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+;  data[0]   ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+;  data[1]   ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+;  data[2]   ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+;  data[3]   ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+;  data[4]   ; IORQb      ; 40.000 ; 40.000 ; Rise       ; IORQb           ;
+;  data[5]   ; IORQb      ; 40.800 ; 40.800 ; Rise       ; IORQb           ;
+;  data[6]   ; IORQb      ; 21.800 ; 21.800 ; Rise       ; IORQb           ;
+;  data[7]   ; IORQb      ; 21.000 ; 21.000 ; Rise       ; IORQb           ;
+; CAPS       ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+; CK_RTCAL   ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+; PSGBC1     ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+; PSGBDIR    ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+; RAM_CSb    ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+; ROMA[*]    ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  ROMA[0]   ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  ROMA[1]   ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+; ROM_OEb    ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+; RTCCSb     ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+; SLTbo[*]   ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  SLTbo[1]  ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  SLTbo[2]  ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+; SPK        ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+; VDP_CSRb   ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+; VDP_CSWb   ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+; data[*]    ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+;  data[0]   ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+;  data[1]   ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+;  data[2]   ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  data[3]   ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  data[4]   ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  data[5]   ; IORQb      ; 40.800 ; 40.800 ; Fall       ; IORQb           ;
+;  data[6]   ; IORQb      ; 21.800 ; 21.800 ; Fall       ; IORQb           ;
+;  data[7]   ; IORQb      ; 21.000 ; 21.000 ; Fall       ; IORQb           ;
+; keyMAT[*]  ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  keyMAT[0] ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  keyMAT[1] ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  keyMAT[2] ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+;  keyMAT[3] ; IORQb      ; 40.000 ; 40.000 ; Fall       ; IORQb           ;
+; CK_RTCAL   ; WRb        ; 21.000 ; 21.000 ; Rise       ; WRb             ;
+; PSGBDIR    ; WRb        ; 21.000 ; 21.000 ; Rise       ; WRb             ;
+; RTCCSb     ; WRb        ; 56.000 ; 56.000 ; Rise       ; WRb             ;
+; VDP_CSWb   ; WRb        ; 21.000 ; 21.000 ; Rise       ; WRb             ;
+; CAPS       ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+; CK_RTCAL   ; WRb        ; 21.000 ; 21.000 ; Fall       ; WRb             ;
+; PSGBDIR    ; WRb        ; 21.000 ; 21.000 ; Fall       ; WRb             ;
+; RAMA[*]    ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  RAMA[0]   ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+;  RAMA[1]   ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+;  RAMA[2]   ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+;  RAMA[3]   ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  RAMA[4]   ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+; RAM_CSb    ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+; ROMA[*]    ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  ROMA[0]   ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  ROMA[1]   ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+; ROM_OEb    ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+; SLTbo[*]   ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+;  SLTbo[1]  ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+;  SLTbo[2]  ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+; SPK        ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+; VDP_CSWb   ; WRb        ; 21.000 ; 21.000 ; Fall       ; WRb             ;
+; data[*]    ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  data[0]   ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+;  data[1]   ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  data[2]   ; WRb        ; 78.000 ; 78.000 ; Fall       ; WRb             ;
+;  data[3]   ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+;  data[4]   ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+;  data[5]   ; WRb        ; 59.000 ; 59.000 ; Fall       ; WRb             ;
+;  data[6]   ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  data[7]   ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+; keyMAT[*]  ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  keyMAT[0] ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  keyMAT[1] ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  keyMAT[2] ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
+;  keyMAT[3] ; WRb        ; 40.000 ; 40.000 ; Fall       ; WRb             ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; M1b        ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; PSGBC1      ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; PSGBDIR     ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; RAM_CSb     ;        ; 40.800 ; 40.800 ;        ;
+; M1b        ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; M1b        ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; M1b        ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; M1b        ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; M1b        ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; M1b        ; VDP_CSRb    ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; VDP_CSWb    ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; data[0]     ; 41.600 ; 56.000 ; 56.000 ; 41.600 ;
+; M1b        ; data[1]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; M1b        ; data[2]     ; 60.600 ; 75.000 ; 75.000 ; 60.600 ;
+; M1b        ; data[3]     ; 59.000 ; 60.600 ; 60.600 ; 59.000 ;
+; M1b        ; data[4]     ; 78.000 ; 78.000 ; 78.000 ; 78.000 ;
+; M1b        ; data[5]     ; 59.000 ; 59.800 ; 59.800 ; 59.000 ;
+; M1b        ; data[6]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; M1b        ; data[7]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; MREQb      ; RAM_CSb     ;        ; 21.800 ; 21.800 ;        ;
+; MREQb      ; ROMA[0]     ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; ROMA[1]     ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; ROM_OEb     ;        ; 21.800 ; 21.800 ;        ;
+; MREQb      ; SLTbo[1]    ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; SLTbo[2]    ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; data[0]     ; 37.000 ; 27.500 ; 27.500 ; 37.000 ;
+; MREQb      ; data[1]     ; 37.800 ; 27.500 ; 27.500 ; 37.800 ;
+; MREQb      ; data[2]     ; 56.000 ; 40.000 ; 40.000 ; 56.000 ;
+; MREQb      ; data[3]     ; 56.800 ; 41.600 ; 41.600 ; 56.800 ;
+; MREQb      ; data[4]     ; 75.000 ; 59.000 ; 59.000 ; 75.000 ;
+; MREQb      ; data[5]     ; 56.000 ; 40.800 ; 40.800 ; 56.000 ;
+; MREQb      ; data[6]     ; 37.000 ; 27.500 ; 27.500 ; 37.000 ;
+; MREQb      ; data[7]     ; 37.000 ; 27.500 ; 27.500 ; 37.000 ;
+; PB[0]      ; data[0]     ; 40.000 ;        ;        ; 40.000 ;
+; PB[1]      ; data[1]     ; 21.800 ;        ;        ; 21.800 ;
+; PB[2]      ; data[2]     ; 59.000 ;        ;        ; 59.000 ;
+; PB[3]      ; data[3]     ; 40.800 ;        ;        ; 40.800 ;
+; PB[4]      ; data[4]     ; 59.000 ;        ;        ; 59.000 ;
+; PB[5]      ; data[5]     ; 40.800 ;        ;        ; 40.800 ;
+; PB[6]      ; data[6]     ; 21.800 ;        ;        ; 21.800 ;
+; PB[7]      ; data[7]     ;        ; 21.800 ; 21.800 ;        ;
+; RDb        ; PG1RDb      ;        ; 21.000 ; 21.000 ;        ;
+; RDb        ; PG2RDb      ;        ; 21.000 ; 21.000 ;        ;
+; RDb        ; PG12RDb     ;        ; 21.000 ; 21.000 ;        ;
+; RDb        ; ROM_OEb     ;        ; 21.800 ; 21.800 ;        ;
+; RDb        ; VDP_CSRb    ;        ; 21.000 ; 21.000 ;        ;
+; RDb        ; data[0]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[1]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[2]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[3]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[4]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[5]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[6]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[7]     ;        ; 27.500 ; 27.500 ;        ;
+; RFSHb      ; RAM_CSb     ; 21.800 ;        ;        ; 21.800 ;
+; RFSHb      ; ROMA[0]     ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; ROMA[1]     ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; ROM_OEb     ; 21.800 ;        ;        ; 21.800 ;
+; RFSHb      ; SLTbo[1]    ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; SLTbo[2]    ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; data[0]     ; 27.500 ; 37.000 ; 37.000 ; 27.500 ;
+; RFSHb      ; data[1]     ; 27.500 ; 37.800 ; 37.800 ; 27.500 ;
+; RFSHb      ; data[2]     ; 40.000 ; 56.000 ; 56.000 ; 40.000 ;
+; RFSHb      ; data[3]     ; 41.600 ; 56.800 ; 56.800 ; 41.600 ;
+; RFSHb      ; data[4]     ; 59.000 ; 75.000 ; 75.000 ; 59.000 ;
+; RFSHb      ; data[5]     ; 40.800 ; 56.000 ; 56.000 ; 40.800 ;
+; RFSHb      ; data[6]     ; 27.500 ; 37.000 ; 37.000 ; 27.500 ;
+; RFSHb      ; data[7]     ; 27.500 ; 37.000 ; 37.000 ; 27.500 ;
+; RSTb       ; RAM_CSb     ;        ; 40.800 ; 40.800 ;        ;
+; RSTb       ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; RSTb       ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; RSTb       ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; RSTb       ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; RSTb       ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; RSTb       ; data[0]     ; 40.800 ; 56.000 ; 56.000 ; 40.800 ;
+; RSTb       ; data[1]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; RSTb       ; data[2]     ; 59.800 ; 75.000 ; 75.000 ; 59.800 ;
+; RSTb       ; data[3]     ; 59.000 ; 60.600 ; 60.600 ; 59.000 ;
+; RSTb       ; data[4]     ; 78.000 ; 78.000 ; 78.000 ; 78.000 ;
+; RSTb       ; data[5]     ; 59.000 ; 59.800 ; 59.800 ; 59.000 ;
+; RSTb       ; data[6]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; RSTb       ; data[7]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; SLT_INTb   ; CPU_INTb    ; 21.000 ;        ;        ; 21.000 ;
+; VDP_INTb   ; CPU_INTb    ; 21.000 ;        ;        ; 21.000 ;
+; addr13_8b  ; RAM_CSb     ;        ; 40.000 ; 40.000 ;        ;
+; addr13_8b  ; data[0]     ; 37.000 ; 27.500 ; 27.500 ; 37.000 ;
+; addr13_8b  ; data[1]     ; 37.800 ; 27.500 ; 27.500 ; 37.800 ;
+; addr13_8b  ; data[2]     ; 56.000 ; 40.000 ; 40.000 ; 56.000 ;
+; addr13_8b  ; data[3]     ; 56.800 ; 41.600 ; 41.600 ; 56.800 ;
+; addr13_8b  ; data[4]     ; 75.000 ; 59.000 ; 59.000 ; 75.000 ;
+; addr13_8b  ; data[5]     ; 56.000 ; 40.800 ; 40.800 ; 56.000 ;
+; addr13_8b  ; data[6]     ; 37.000 ; 27.500 ; 27.500 ; 37.000 ;
+; addr13_8b  ; data[7]     ; 37.000 ; 27.500 ; 27.500 ; 37.000 ;
+; addrH[14]  ; PG1RDb      ; 21.000 ;        ;        ; 21.000 ;
+; addrH[14]  ; PG2RDb      ;        ; 21.000 ; 21.000 ;        ;
+; addrH[14]  ; PG12RDb     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; RAMA[0]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[14]  ; RAMA[1]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[14]  ; RAMA[2]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[14]  ; RAMA[3]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; RAMA[4]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; RAM_CSb     ; 21.000 ; 21.800 ; 21.800 ; 21.000 ;
+; addrH[14]  ; ROMA[0]     ; 21.000 ;        ;        ; 21.000 ;
+; addrH[14]  ; ROMA[1]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; ROM_OEb     ; 21.000 ; 21.800 ; 21.800 ; 21.000 ;
+; addrH[14]  ; SLTbo[1]    ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; SLTbo[2]    ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; data[0]     ; 56.000 ; 56.000 ; 56.000 ; 56.000 ;
+; addrH[14]  ; data[1]     ; 27.500 ; 37.800 ; 37.800 ; 27.500 ;
+; addrH[14]  ; data[2]     ; 75.000 ; 75.000 ; 75.000 ; 75.000 ;
+; addrH[14]  ; data[3]     ; 41.600 ; 56.800 ; 56.800 ; 41.600 ;
+; addrH[14]  ; data[4]     ; 59.000 ; 75.000 ; 75.000 ; 59.000 ;
+; addrH[14]  ; data[5]     ; 40.800 ; 56.000 ; 56.000 ; 40.800 ;
+; addrH[14]  ; data[6]     ; 27.500 ; 37.000 ; 37.000 ; 27.500 ;
+; addrH[14]  ; data[7]     ; 27.500 ; 37.000 ; 37.000 ; 27.500 ;
+; addrH[15]  ; PG1RDb      ;        ; 21.000 ; 21.000 ;        ;
+; addrH[15]  ; PG2RDb      ; 21.000 ;        ;        ; 21.000 ;
+; addrH[15]  ; PG12RDb     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; RAMA[0]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[15]  ; RAMA[1]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[15]  ; RAMA[2]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[15]  ; RAMA[3]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; RAMA[4]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; RAM_CSb     ; 21.800 ; 21.800 ; 21.800 ; 21.800 ;
+; addrH[15]  ; ROMA[0]     ;        ; 21.000 ; 21.000 ;        ;
+; addrH[15]  ; ROMA[1]     ;        ; 21.000 ; 21.000 ;        ;
+; addrH[15]  ; ROM_OEb     ;        ; 21.800 ; 21.800 ;        ;
+; addrH[15]  ; SLTbo[1]    ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; SLTbo[2]    ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; data[0]     ; 56.000 ; 56.000 ; 56.000 ; 56.000 ;
+; addrH[15]  ; data[1]     ; 27.500 ; 37.800 ; 37.800 ; 27.500 ;
+; addrH[15]  ; data[2]     ; 75.000 ; 75.000 ; 75.000 ; 75.000 ;
+; addrH[15]  ; data[3]     ; 41.600 ; 56.800 ; 56.800 ; 41.600 ;
+; addrH[15]  ; data[4]     ; 59.000 ; 75.000 ; 75.000 ; 59.000 ;
+; addrH[15]  ; data[5]     ; 40.800 ; 56.000 ; 56.000 ; 40.800 ;
+; addrH[15]  ; data[6]     ; 27.500 ; 37.000 ; 37.000 ; 27.500 ;
+; addrH[15]  ; data[7]     ; 27.500 ; 37.000 ; 37.000 ; 27.500 ;
+; addrL[0]   ; CK_RTCAL    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[0]   ; PSGBC1      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[0]   ; RAM_CSb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[0]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[0]   ; data[0]     ; 41.600 ; 41.600 ; 41.600 ; 41.600 ;
+; addrL[0]   ; data[1]     ; 27.500 ; 22.600 ; 22.600 ; 27.500 ;
+; addrL[0]   ; data[2]     ; 60.600 ; 60.600 ; 60.600 ; 60.600 ;
+; addrL[0]   ; data[3]     ; 41.600 ; 41.600 ; 41.600 ; 41.600 ;
+; addrL[0]   ; data[4]     ; 59.000 ; 59.000 ; 59.000 ; 59.000 ;
+; addrL[0]   ; data[5]     ; 40.800 ; 40.800 ; 40.800 ; 40.800 ;
+; addrL[0]   ; data[6]     ; 27.500 ; 21.800 ; 21.800 ; 27.500 ;
+; addrL[0]   ; data[7]     ; 27.500 ; 37.000 ; 37.000 ; 27.500 ;
+; addrL[1]   ; CK_RTCAL    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[1]   ; RAM_CSb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[1]   ; RTCCSb      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[1]   ; data[0]     ; 41.600 ; 41.600 ; 41.600 ; 41.600 ;
+; addrL[1]   ; data[1]     ; 27.500 ; 22.600 ; 22.600 ; 27.500 ;
+; addrL[1]   ; data[2]     ; 60.600 ; 60.600 ; 60.600 ; 60.600 ;
+; addrL[1]   ; data[3]     ; 41.600 ; 41.600 ; 41.600 ; 41.600 ;
+; addrL[1]   ; data[4]     ; 59.000 ; 59.000 ; 59.000 ; 59.000 ;
+; addrL[1]   ; data[5]     ; 40.800 ; 40.800 ; 40.800 ; 40.800 ;
+; addrL[1]   ; data[6]     ; 27.500 ; 21.800 ; 21.800 ; 27.500 ;
+; addrL[1]   ; data[7]     ; 27.500 ; 37.000 ; 37.000 ; 27.500 ;
+; addrL[2]   ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[2]   ; RAM_CSb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[2]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[2]   ; data[0]     ; 41.600 ; 37.000 ; 37.000 ; 41.600 ;
+; addrL[2]   ; data[1]     ; 27.500 ; 37.800 ; 37.800 ; 27.500 ;
+; addrL[2]   ; data[2]     ; 60.600 ; 56.000 ; 56.000 ; 60.600 ;
+; addrL[2]   ; data[3]     ; 41.600 ; 56.800 ; 56.800 ; 41.600 ;
+; addrL[2]   ; data[4]     ; 59.000 ; 75.000 ; 75.000 ; 59.000 ;
+; addrL[2]   ; data[5]     ; 40.000 ; 56.800 ; 56.800 ; 40.000 ;
+; addrL[2]   ; data[6]     ; 27.500 ; 37.800 ; 37.800 ; 27.500 ;
+; addrL[2]   ; data[7]     ; 27.500 ;        ;        ; 27.500 ;
+; addrL[3]   ; CK_RTCAL    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[3]   ; PSGBC1      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[3]   ; PSGBDIR     ;        ; 21.000 ; 21.000 ;        ;
+; addrL[3]   ; RAM_CSb     ; 40.000 ; 40.800 ; 40.800 ; 40.000 ;
+; addrL[3]   ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[3]   ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[3]   ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[3]   ; RTCCSb      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[3]   ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[3]   ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[3]   ; VDP_CSRb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[3]   ; VDP_CSWb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[3]   ; data[0]     ; 41.600 ; 56.000 ; 56.000 ; 41.600 ;
+; addrL[3]   ; data[1]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; addrL[3]   ; data[2]     ; 60.600 ; 75.000 ; 75.000 ; 60.600 ;
+; addrL[3]   ; data[3]     ; 59.000 ; 60.600 ; 60.600 ; 59.000 ;
+; addrL[3]   ; data[4]     ; 78.000 ; 78.000 ; 78.000 ; 78.000 ;
+; addrL[3]   ; data[5]     ; 59.000 ; 59.800 ; 59.800 ; 59.000 ;
+; addrL[3]   ; data[6]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; addrL[3]   ; data[7]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; addrL[4]   ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[4]   ; PSGBC1      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[4]   ; PSGBDIR     ;        ; 21.000 ; 21.000 ;        ;
+; addrL[4]   ; RAM_CSb     ; 40.800 ;        ;        ; 40.800 ;
+; addrL[4]   ; ROMA[0]     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[4]   ; ROMA[1]     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[4]   ; ROM_OEb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[4]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[4]   ; SLTbo[1]    ;        ; 40.000 ; 40.000 ;        ;
+; addrL[4]   ; SLTbo[2]    ;        ; 40.000 ; 40.000 ;        ;
+; addrL[4]   ; VDP_CSRb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[4]   ; VDP_CSWb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[4]   ; data[0]     ; 56.000 ; 40.800 ; 40.800 ; 56.000 ;
+; addrL[4]   ; data[1]     ; 46.500 ; 40.000 ; 40.000 ; 46.500 ;
+; addrL[4]   ; data[2]     ; 75.000 ; 59.800 ; 59.800 ; 75.000 ;
+; addrL[4]   ; data[3]     ; 60.600 ; 59.000 ; 59.000 ; 60.600 ;
+; addrL[4]   ; data[4]     ; 78.000 ; 78.000 ; 78.000 ; 78.000 ;
+; addrL[4]   ; data[5]     ; 59.800 ; 59.000 ; 59.000 ; 59.800 ;
+; addrL[4]   ; data[6]     ; 46.500 ; 40.000 ; 40.000 ; 46.500 ;
+; addrL[4]   ; data[7]     ; 46.500 ; 40.000 ; 40.000 ; 46.500 ;
+; addrL[5]   ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[5]   ; PSGBC1      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[5]   ; PSGBDIR     ; 21.000 ;        ;        ; 21.000 ;
+; addrL[5]   ; RAM_CSb     ; 40.000 ; 40.800 ; 40.800 ; 40.000 ;
+; addrL[5]   ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[5]   ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[5]   ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[5]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[5]   ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[5]   ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[5]   ; VDP_CSRb    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[5]   ; VDP_CSWb    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[5]   ; data[0]     ; 41.600 ; 56.000 ; 56.000 ; 41.600 ;
+; addrL[5]   ; data[1]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; addrL[5]   ; data[2]     ; 60.600 ; 75.000 ; 75.000 ; 60.600 ;
+; addrL[5]   ; data[3]     ; 59.000 ; 60.600 ; 60.600 ; 59.000 ;
+; addrL[5]   ; data[4]     ; 78.000 ; 78.000 ; 78.000 ; 78.000 ;
+; addrL[5]   ; data[5]     ; 59.000 ; 59.800 ; 59.800 ; 59.000 ;
+; addrL[5]   ; data[6]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; addrL[5]   ; data[7]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; addrL[6]   ; CK_RTCAL    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; PSGBC1      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; PSGBDIR     ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; RAM_CSb     ; 40.800 ;        ;        ; 40.800 ;
+; addrL[6]   ; ROMA[0]     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[6]   ; ROMA[1]     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[6]   ; ROM_OEb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[6]   ; RTCCSb      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; SLTbo[1]    ;        ; 40.000 ; 40.000 ;        ;
+; addrL[6]   ; SLTbo[2]    ;        ; 40.000 ; 40.000 ;        ;
+; addrL[6]   ; VDP_CSRb    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; VDP_CSWb    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; data[0]     ; 56.000 ; 40.800 ; 40.800 ; 56.000 ;
+; addrL[6]   ; data[1]     ; 46.500 ; 40.000 ; 40.000 ; 46.500 ;
+; addrL[6]   ; data[2]     ; 75.000 ; 59.800 ; 59.800 ; 75.000 ;
+; addrL[6]   ; data[3]     ; 60.600 ; 59.000 ; 59.000 ; 60.600 ;
+; addrL[6]   ; data[4]     ; 78.000 ; 78.000 ; 78.000 ; 78.000 ;
+; addrL[6]   ; data[5]     ; 59.800 ; 59.000 ; 59.000 ; 59.800 ;
+; addrL[6]   ; data[6]     ; 46.500 ; 40.000 ; 40.000 ; 46.500 ;
+; addrL[6]   ; data[7]     ; 46.500 ; 40.000 ; 40.000 ; 46.500 ;
+; addrL[7]   ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; PSGBC1      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; PSGBDIR     ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; RAM_CSb     ; 40.000 ; 40.800 ; 40.800 ; 40.000 ;
+; addrL[7]   ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[7]   ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[7]   ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[7]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[7]   ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[7]   ; VDP_CSRb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; VDP_CSWb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; data[0]     ; 41.600 ; 56.000 ; 56.000 ; 41.600 ;
+; addrL[7]   ; data[1]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; addrL[7]   ; data[2]     ; 60.600 ; 75.000 ; 75.000 ; 60.600 ;
+; addrL[7]   ; data[3]     ; 59.000 ; 60.600 ; 60.600 ; 59.000 ;
+; addrL[7]   ; data[4]     ; 78.000 ; 78.000 ; 78.000 ; 78.000 ;
+; addrL[7]   ; data[5]     ; 59.000 ; 59.800 ; 59.800 ; 59.000 ;
+; addrL[7]   ; data[6]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; addrL[7]   ; data[7]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; M1b        ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; PSGBC1      ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; PSGBDIR     ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; RAM_CSb     ;        ; 40.000 ; 40.000 ;        ;
+; M1b        ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; M1b        ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; M1b        ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; M1b        ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; M1b        ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; M1b        ; VDP_CSRb    ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; VDP_CSWb    ; 21.000 ;        ;        ; 21.000 ;
+; M1b        ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; M1b        ; data[1]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; M1b        ; data[2]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; M1b        ; data[3]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; M1b        ; data[4]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; M1b        ; data[5]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; M1b        ; data[6]     ; 21.800 ; 37.000 ; 37.000 ; 21.800 ;
+; M1b        ; data[7]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; MREQb      ; RAM_CSb     ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; ROMA[0]     ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; ROMA[1]     ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; ROM_OEb     ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; SLTbo[1]    ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; SLTbo[2]    ;        ; 21.000 ; 21.000 ;        ;
+; MREQb      ; data[0]     ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
+; MREQb      ; data[1]     ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
+; MREQb      ; data[2]     ; 56.000 ; 27.500 ; 27.500 ; 56.000 ;
+; MREQb      ; data[3]     ; 56.000 ; 27.500 ; 27.500 ; 56.000 ;
+; MREQb      ; data[4]     ; 75.000 ; 27.500 ; 27.500 ; 75.000 ;
+; MREQb      ; data[5]     ; 56.000 ; 27.500 ; 27.500 ; 56.000 ;
+; MREQb      ; data[6]     ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
+; MREQb      ; data[7]     ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
+; PB[0]      ; data[0]     ; 40.000 ;        ;        ; 40.000 ;
+; PB[1]      ; data[1]     ; 21.800 ;        ;        ; 21.800 ;
+; PB[2]      ; data[2]     ; 59.000 ;        ;        ; 59.000 ;
+; PB[3]      ; data[3]     ; 40.800 ;        ;        ; 40.800 ;
+; PB[4]      ; data[4]     ; 59.000 ;        ;        ; 59.000 ;
+; PB[5]      ; data[5]     ; 40.800 ;        ;        ; 40.800 ;
+; PB[6]      ; data[6]     ; 21.000 ;        ;        ; 21.000 ;
+; PB[7]      ; data[7]     ;        ; 21.800 ; 21.800 ;        ;
+; RDb        ; PG1RDb      ;        ; 21.000 ; 21.000 ;        ;
+; RDb        ; PG2RDb      ;        ; 21.000 ; 21.000 ;        ;
+; RDb        ; PG12RDb     ;        ; 21.000 ; 21.000 ;        ;
+; RDb        ; ROM_OEb     ;        ; 21.000 ; 21.000 ;        ;
+; RDb        ; VDP_CSRb    ;        ; 21.000 ; 21.000 ;        ;
+; RDb        ; data[0]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[1]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[2]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[3]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[4]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[5]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[6]     ;        ; 27.500 ; 27.500 ;        ;
+; RDb        ; data[7]     ;        ; 27.500 ; 27.500 ;        ;
+; RFSHb      ; RAM_CSb     ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; ROMA[0]     ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; ROMA[1]     ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; ROM_OEb     ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; SLTbo[1]    ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; SLTbo[2]    ; 21.000 ;        ;        ; 21.000 ;
+; RFSHb      ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; RFSHb      ; data[1]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; RFSHb      ; data[2]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; RFSHb      ; data[3]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; RFSHb      ; data[4]     ; 27.500 ; 75.000 ; 75.000 ; 27.500 ;
+; RFSHb      ; data[5]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; RFSHb      ; data[6]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; RFSHb      ; data[7]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; RSTb       ; RAM_CSb     ;        ; 40.000 ; 40.000 ;        ;
+; RSTb       ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; RSTb       ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; RSTb       ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; RSTb       ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; RSTb       ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; RSTb       ; data[0]     ; 40.000 ; 46.500 ; 46.500 ; 40.000 ;
+; RSTb       ; data[1]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; RSTb       ; data[2]     ; 59.000 ; 46.500 ; 46.500 ; 59.000 ;
+; RSTb       ; data[3]     ; 59.000 ; 46.500 ; 46.500 ; 59.000 ;
+; RSTb       ; data[4]     ; 78.000 ; 46.500 ; 46.500 ; 78.000 ;
+; RSTb       ; data[5]     ; 59.000 ; 46.500 ; 46.500 ; 59.000 ;
+; RSTb       ; data[6]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; RSTb       ; data[7]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; SLT_INTb   ; CPU_INTb    ; 21.000 ;        ;        ; 21.000 ;
+; VDP_INTb   ; CPU_INTb    ; 21.000 ;        ;        ; 21.000 ;
+; addr13_8b  ; RAM_CSb     ;        ; 40.000 ; 40.000 ;        ;
+; addr13_8b  ; data[0]     ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
+; addr13_8b  ; data[1]     ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
+; addr13_8b  ; data[2]     ; 56.000 ; 27.500 ; 27.500 ; 56.000 ;
+; addr13_8b  ; data[3]     ; 56.000 ; 27.500 ; 27.500 ; 56.000 ;
+; addr13_8b  ; data[4]     ; 75.000 ; 27.500 ; 27.500 ; 75.000 ;
+; addr13_8b  ; data[5]     ; 56.000 ; 27.500 ; 27.500 ; 56.000 ;
+; addr13_8b  ; data[6]     ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
+; addr13_8b  ; data[7]     ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
+; addrH[14]  ; PG1RDb      ; 21.000 ;        ;        ; 21.000 ;
+; addrH[14]  ; PG2RDb      ;        ; 21.000 ; 21.000 ;        ;
+; addrH[14]  ; PG12RDb     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; RAMA[0]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[14]  ; RAMA[1]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[14]  ; RAMA[2]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[14]  ; RAMA[3]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; RAMA[4]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; RAM_CSb     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; ROMA[0]     ; 21.000 ;        ;        ; 21.000 ;
+; addrH[14]  ; ROMA[1]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; ROM_OEb     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; SLTbo[1]    ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; SLTbo[2]    ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[14]  ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrH[14]  ; data[1]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrH[14]  ; data[2]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrH[14]  ; data[3]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrH[14]  ; data[4]     ; 27.500 ; 75.000 ; 75.000 ; 27.500 ;
+; addrH[14]  ; data[5]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrH[14]  ; data[6]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrH[14]  ; data[7]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrH[15]  ; PG1RDb      ;        ; 21.000 ; 21.000 ;        ;
+; addrH[15]  ; PG2RDb      ; 21.000 ;        ;        ; 21.000 ;
+; addrH[15]  ; PG12RDb     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; RAMA[0]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[15]  ; RAMA[1]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[15]  ; RAMA[2]     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrH[15]  ; RAMA[3]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; RAMA[4]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; RAM_CSb     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; ROMA[0]     ;        ; 21.000 ; 21.000 ;        ;
+; addrH[15]  ; ROMA[1]     ;        ; 21.000 ; 21.000 ;        ;
+; addrH[15]  ; ROM_OEb     ;        ; 21.000 ; 21.000 ;        ;
+; addrH[15]  ; SLTbo[1]    ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; SLTbo[2]    ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrH[15]  ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrH[15]  ; data[1]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrH[15]  ; data[2]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrH[15]  ; data[3]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrH[15]  ; data[4]     ; 27.500 ; 75.000 ; 75.000 ; 27.500 ;
+; addrH[15]  ; data[5]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrH[15]  ; data[6]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrH[15]  ; data[7]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrL[0]   ; CK_RTCAL    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[0]   ; PSGBC1      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[0]   ; RAM_CSb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[0]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[0]   ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrL[0]   ; data[1]     ; 21.000 ; 21.800 ; 21.800 ; 21.000 ;
+; addrL[0]   ; data[2]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrL[0]   ; data[3]     ; 27.500 ; 40.800 ; 40.800 ; 27.500 ;
+; addrL[0]   ; data[4]     ; 27.500 ; 59.000 ; 59.000 ; 27.500 ;
+; addrL[0]   ; data[5]     ; 27.500 ; 40.800 ; 40.800 ; 27.500 ;
+; addrL[0]   ; data[6]     ; 21.000 ; 21.800 ; 21.800 ; 21.000 ;
+; addrL[0]   ; data[7]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrL[1]   ; CK_RTCAL    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[1]   ; RAM_CSb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[1]   ; RTCCSb      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[1]   ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrL[1]   ; data[1]     ; 21.000 ; 21.800 ; 21.800 ; 21.000 ;
+; addrL[1]   ; data[2]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrL[1]   ; data[3]     ; 27.500 ; 40.800 ; 40.800 ; 27.500 ;
+; addrL[1]   ; data[4]     ; 27.500 ; 40.000 ; 40.000 ; 27.500 ;
+; addrL[1]   ; data[5]     ; 27.500 ; 40.800 ; 40.800 ; 27.500 ;
+; addrL[1]   ; data[6]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrL[1]   ; data[7]     ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; addrL[2]   ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[2]   ; RAM_CSb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[2]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[2]   ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrL[2]   ; data[1]     ; 21.000 ; 37.800 ; 37.800 ; 21.000 ;
+; addrL[2]   ; data[2]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrL[2]   ; data[3]     ; 27.500 ; 56.800 ; 56.800 ; 27.500 ;
+; addrL[2]   ; data[4]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrL[2]   ; data[5]     ; 27.500 ; 56.000 ; 56.000 ; 27.500 ;
+; addrL[2]   ; data[6]     ; 21.000 ; 37.800 ; 37.800 ; 21.000 ;
+; addrL[2]   ; data[7]     ; 21.000 ;        ;        ; 21.000 ;
+; addrL[3]   ; CK_RTCAL    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[3]   ; PSGBC1      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[3]   ; PSGBDIR     ;        ; 21.000 ; 21.000 ;        ;
+; addrL[3]   ; RAM_CSb     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrL[3]   ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[3]   ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[3]   ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[3]   ; RTCCSb      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[3]   ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[3]   ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[3]   ; VDP_CSRb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[3]   ; VDP_CSWb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[3]   ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrL[3]   ; data[1]     ; 21.000 ; 37.800 ; 37.800 ; 21.000 ;
+; addrL[3]   ; data[2]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[3]   ; data[3]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[3]   ; data[4]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[3]   ; data[5]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[3]   ; data[6]     ; 21.000 ; 37.800 ; 37.800 ; 21.000 ;
+; addrL[3]   ; data[7]     ; 21.000 ; 40.000 ; 40.000 ; 21.000 ;
+; addrL[4]   ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[4]   ; PSGBC1      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[4]   ; PSGBDIR     ;        ; 21.000 ; 21.000 ;        ;
+; addrL[4]   ; RAM_CSb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[4]   ; ROMA[0]     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[4]   ; ROMA[1]     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[4]   ; ROM_OEb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[4]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[4]   ; SLTbo[1]    ;        ; 40.000 ; 40.000 ;        ;
+; addrL[4]   ; SLTbo[2]    ;        ; 40.000 ; 40.000 ;        ;
+; addrL[4]   ; VDP_CSRb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[4]   ; VDP_CSWb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[4]   ; data[0]     ; 21.000 ; 27.500 ; 27.500 ; 21.000 ;
+; addrL[4]   ; data[1]     ; 21.000 ; 27.500 ; 27.500 ; 21.000 ;
+; addrL[4]   ; data[2]     ; 27.500 ; 27.500 ; 27.500 ; 27.500 ;
+; addrL[4]   ; data[3]     ; 27.500 ; 27.500 ; 27.500 ; 27.500 ;
+; addrL[4]   ; data[4]     ; 27.500 ; 27.500 ; 27.500 ; 27.500 ;
+; addrL[4]   ; data[5]     ; 27.500 ; 27.500 ; 27.500 ; 27.500 ;
+; addrL[4]   ; data[6]     ; 21.000 ; 27.500 ; 27.500 ; 21.000 ;
+; addrL[4]   ; data[7]     ; 21.000 ; 27.500 ; 27.500 ; 21.000 ;
+; addrL[5]   ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[5]   ; PSGBC1      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[5]   ; PSGBDIR     ; 21.000 ;        ;        ; 21.000 ;
+; addrL[5]   ; RAM_CSb     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrL[5]   ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[5]   ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[5]   ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[5]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[5]   ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[5]   ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[5]   ; VDP_CSRb    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[5]   ; VDP_CSWb    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[5]   ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrL[5]   ; data[1]     ; 21.000 ; 37.800 ; 37.800 ; 21.000 ;
+; addrL[5]   ; data[2]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[5]   ; data[3]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[5]   ; data[4]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[5]   ; data[5]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[5]   ; data[6]     ; 21.000 ; 37.800 ; 37.800 ; 21.000 ;
+; addrL[5]   ; data[7]     ; 21.000 ; 40.000 ; 40.000 ; 21.000 ;
+; addrL[6]   ; CK_RTCAL    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; PSGBC1      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; PSGBDIR     ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; RAM_CSb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[6]   ; ROMA[0]     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[6]   ; ROMA[1]     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[6]   ; ROM_OEb     ; 40.000 ;        ;        ; 40.000 ;
+; addrL[6]   ; RTCCSb      ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; SLTbo[1]    ;        ; 40.000 ; 40.000 ;        ;
+; addrL[6]   ; SLTbo[2]    ;        ; 40.000 ; 40.000 ;        ;
+; addrL[6]   ; VDP_CSRb    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; VDP_CSWb    ;        ; 21.000 ; 21.000 ;        ;
+; addrL[6]   ; data[0]     ; 21.000 ; 27.500 ; 27.500 ; 21.000 ;
+; addrL[6]   ; data[1]     ; 21.000 ; 27.500 ; 27.500 ; 21.000 ;
+; addrL[6]   ; data[2]     ; 27.500 ; 27.500 ; 27.500 ; 27.500 ;
+; addrL[6]   ; data[3]     ; 27.500 ; 27.500 ; 27.500 ; 27.500 ;
+; addrL[6]   ; data[4]     ; 27.500 ; 27.500 ; 27.500 ; 27.500 ;
+; addrL[6]   ; data[5]     ; 27.500 ; 27.500 ; 27.500 ; 27.500 ;
+; addrL[6]   ; data[6]     ; 21.000 ; 27.500 ; 27.500 ; 21.000 ;
+; addrL[6]   ; data[7]     ; 21.000 ; 27.500 ; 27.500 ; 21.000 ;
+; addrL[7]   ; CK_RTCAL    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; PSGBC1      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; PSGBDIR     ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; RAM_CSb     ; 40.000 ; 40.000 ; 40.000 ; 40.000 ;
+; addrL[7]   ; ROMA[0]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[7]   ; ROMA[1]     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[7]   ; ROM_OEb     ;        ; 40.000 ; 40.000 ;        ;
+; addrL[7]   ; RTCCSb      ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; SLTbo[1]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[7]   ; SLTbo[2]    ; 40.000 ;        ;        ; 40.000 ;
+; addrL[7]   ; VDP_CSRb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; VDP_CSWb    ; 21.000 ;        ;        ; 21.000 ;
+; addrL[7]   ; data[0]     ; 21.000 ; 37.000 ; 37.000 ; 21.000 ;
+; addrL[7]   ; data[1]     ; 21.000 ; 37.800 ; 37.800 ; 21.000 ;
+; addrL[7]   ; data[2]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[7]   ; data[3]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[7]   ; data[4]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[7]   ; data[5]     ; 27.500 ; 46.500 ; 46.500 ; 27.500 ;
+; addrL[7]   ; data[6]     ; 21.000 ; 37.800 ; 37.800 ; 21.000 ;
+; addrL[7]   ; data[7]     ; 21.000 ; 40.000 ; 40.000 ; 21.000 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-----------------------------------------------------------------------+
+; Output Enable Times                                                   ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; data[*]   ; IORQb      ; 46.500 ;      ; Rise       ; IORQb           ;
+;  data[0]  ; IORQb      ; 46.500 ;      ; Rise       ; IORQb           ;
+;  data[1]  ; IORQb      ; 46.500 ;      ; Rise       ; IORQb           ;
+;  data[2]  ; IORQb      ; 46.500 ;      ; Rise       ; IORQb           ;
+;  data[3]  ; IORQb      ; 46.500 ;      ; Rise       ; IORQb           ;
+;  data[4]  ; IORQb      ; 46.500 ;      ; Rise       ; IORQb           ;
+;  data[5]  ; IORQb      ; 46.500 ;      ; Rise       ; IORQb           ;
+;  data[6]  ; IORQb      ; 46.500 ;      ; Rise       ; IORQb           ;
+;  data[7]  ; IORQb      ; 46.500 ;      ; Rise       ; IORQb           ;
+; data[*]   ; IORQb      ; 65.500 ;      ; Fall       ; IORQb           ;
+;  data[0]  ; IORQb      ; 65.500 ;      ; Fall       ; IORQb           ;
+;  data[1]  ; IORQb      ; 65.500 ;      ; Fall       ; IORQb           ;
+;  data[2]  ; IORQb      ; 65.500 ;      ; Fall       ; IORQb           ;
+;  data[3]  ; IORQb      ; 65.500 ;      ; Fall       ; IORQb           ;
+;  data[4]  ; IORQb      ; 65.500 ;      ; Fall       ; IORQb           ;
+;  data[5]  ; IORQb      ; 65.500 ;      ; Fall       ; IORQb           ;
+;  data[6]  ; IORQb      ; 65.500 ;      ; Fall       ; IORQb           ;
+;  data[7]  ; IORQb      ; 65.500 ;      ; Fall       ; IORQb           ;
+; data[*]   ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[0]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[1]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[2]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[3]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[4]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[5]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[6]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[7]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Output Enable Times                                           ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; data[*]   ; IORQb      ; 27.500 ;      ; Rise       ; IORQb           ;
+;  data[0]  ; IORQb      ; 27.500 ;      ; Rise       ; IORQb           ;
+;  data[1]  ; IORQb      ; 27.500 ;      ; Rise       ; IORQb           ;
+;  data[2]  ; IORQb      ; 27.500 ;      ; Rise       ; IORQb           ;
+;  data[3]  ; IORQb      ; 27.500 ;      ; Rise       ; IORQb           ;
+;  data[4]  ; IORQb      ; 27.500 ;      ; Rise       ; IORQb           ;
+;  data[5]  ; IORQb      ; 27.500 ;      ; Rise       ; IORQb           ;
+;  data[6]  ; IORQb      ; 27.500 ;      ; Rise       ; IORQb           ;
+;  data[7]  ; IORQb      ; 27.500 ;      ; Rise       ; IORQb           ;
+; data[*]   ; IORQb      ; 27.500 ;      ; Fall       ; IORQb           ;
+;  data[0]  ; IORQb      ; 27.500 ;      ; Fall       ; IORQb           ;
+;  data[1]  ; IORQb      ; 27.500 ;      ; Fall       ; IORQb           ;
+;  data[2]  ; IORQb      ; 27.500 ;      ; Fall       ; IORQb           ;
+;  data[3]  ; IORQb      ; 27.500 ;      ; Fall       ; IORQb           ;
+;  data[4]  ; IORQb      ; 27.500 ;      ; Fall       ; IORQb           ;
+;  data[5]  ; IORQb      ; 27.500 ;      ; Fall       ; IORQb           ;
+;  data[6]  ; IORQb      ; 27.500 ;      ; Fall       ; IORQb           ;
+;  data[7]  ; IORQb      ; 27.500 ;      ; Fall       ; IORQb           ;
+; data[*]   ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[0]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[1]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[2]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[3]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[4]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[5]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[6]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
+;  data[7]  ; WRb        ; 65.500 ;      ; Fall       ; WRb             ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; data[*]   ; IORQb      ; 46.500    ;           ; Rise       ; IORQb           ;
+;  data[0]  ; IORQb      ; 46.500    ;           ; Rise       ; IORQb           ;
+;  data[1]  ; IORQb      ; 46.500    ;           ; Rise       ; IORQb           ;
+;  data[2]  ; IORQb      ; 46.500    ;           ; Rise       ; IORQb           ;
+;  data[3]  ; IORQb      ; 46.500    ;           ; Rise       ; IORQb           ;
+;  data[4]  ; IORQb      ; 46.500    ;           ; Rise       ; IORQb           ;
+;  data[5]  ; IORQb      ; 46.500    ;           ; Rise       ; IORQb           ;
+;  data[6]  ; IORQb      ; 46.500    ;           ; Rise       ; IORQb           ;
+;  data[7]  ; IORQb      ; 46.500    ;           ; Rise       ; IORQb           ;
+; data[*]   ; IORQb      ; 65.500    ;           ; Fall       ; IORQb           ;
+;  data[0]  ; IORQb      ; 65.500    ;           ; Fall       ; IORQb           ;
+;  data[1]  ; IORQb      ; 65.500    ;           ; Fall       ; IORQb           ;
+;  data[2]  ; IORQb      ; 65.500    ;           ; Fall       ; IORQb           ;
+;  data[3]  ; IORQb      ; 65.500    ;           ; Fall       ; IORQb           ;
+;  data[4]  ; IORQb      ; 65.500    ;           ; Fall       ; IORQb           ;
+;  data[5]  ; IORQb      ; 65.500    ;           ; Fall       ; IORQb           ;
+;  data[6]  ; IORQb      ; 65.500    ;           ; Fall       ; IORQb           ;
+;  data[7]  ; IORQb      ; 65.500    ;           ; Fall       ; IORQb           ;
+; data[*]   ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[0]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[1]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[2]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[3]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[4]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[5]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[6]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[7]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; data[*]   ; IORQb      ; 27.500    ;           ; Rise       ; IORQb           ;
+;  data[0]  ; IORQb      ; 27.500    ;           ; Rise       ; IORQb           ;
+;  data[1]  ; IORQb      ; 27.500    ;           ; Rise       ; IORQb           ;
+;  data[2]  ; IORQb      ; 27.500    ;           ; Rise       ; IORQb           ;
+;  data[3]  ; IORQb      ; 27.500    ;           ; Rise       ; IORQb           ;
+;  data[4]  ; IORQb      ; 27.500    ;           ; Rise       ; IORQb           ;
+;  data[5]  ; IORQb      ; 27.500    ;           ; Rise       ; IORQb           ;
+;  data[6]  ; IORQb      ; 27.500    ;           ; Rise       ; IORQb           ;
+;  data[7]  ; IORQb      ; 27.500    ;           ; Rise       ; IORQb           ;
+; data[*]   ; IORQb      ; 27.500    ;           ; Fall       ; IORQb           ;
+;  data[0]  ; IORQb      ; 27.500    ;           ; Fall       ; IORQb           ;
+;  data[1]  ; IORQb      ; 27.500    ;           ; Fall       ; IORQb           ;
+;  data[2]  ; IORQb      ; 27.500    ;           ; Fall       ; IORQb           ;
+;  data[3]  ; IORQb      ; 27.500    ;           ; Fall       ; IORQb           ;
+;  data[4]  ; IORQb      ; 27.500    ;           ; Fall       ; IORQb           ;
+;  data[5]  ; IORQb      ; 27.500    ;           ; Fall       ; IORQb           ;
+;  data[6]  ; IORQb      ; 27.500    ;           ; Fall       ; IORQb           ;
+;  data[7]  ; IORQb      ; 27.500    ;           ; Fall       ; IORQb           ;
+; data[*]   ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[0]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[1]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[2]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[3]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[4]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[5]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[6]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
+;  data[7]  ; WRb        ; 65.500    ;           ; Fall       ; WRb             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; IORQb      ; IORQb    ; 0        ; 0        ; 0        ; 85       ;
+; WRb        ; IORQb    ; 0        ; 0        ; 0        ; 85       ;
+; IORQb      ; WRb      ; 0        ; 0        ; 56       ; 173      ;
+; WRb        ; WRb      ; 0        ; 0        ; 0        ; 217      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; IORQb      ; IORQb    ; 0        ; 0        ; 0        ; 85       ;
+; WRb        ; IORQb    ; 0        ; 0        ; 0        ; 85       ;
+; IORQb      ; WRb      ; 0        ; 0        ; 56       ; 173      ;
+; WRb        ; WRb      ; 0        ; 0        ; 0        ; 217      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 36    ; 36   ;
+; Unconstrained Input Port Paths  ; 779   ; 779  ;
+; Unconstrained Output Ports      ; 35    ; 35   ;
+; Unconstrained Output Port Paths ; 448   ; 448  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Dec 22 21:29:46 2019
+Info: Command: quartus_sta Retrocon -c Retrocon
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Retrocon.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name IORQb IORQb
+    Info (332105): create_clock -period 1.000 -name WRb WRb
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "xPPI|EN153~9|dataout"
+    Warning (332126): Node "xPPI|EN153~9|[1]"
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -39.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -39.000     -1172.800 WRb 
+    Info (332119):   -20.800      -460.800 IORQb 
+Info (332146): Worst-case hold slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -60.000 WRb 
+    Info (332119):     5.000         0.000 IORQb 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.500      -364.000 WRb 
+    Info (332119):    -3.500      -168.000 IORQb 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4518 megabytes
+    Info: Processing ended: Sun Dec 22 21:29:47 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

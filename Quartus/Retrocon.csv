@@ -1,0 +1,89 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# File: J:\proj\MSX\Retrocon\CPLD_EPM7128\Retrocon.csv
+# Generated on: Thu Oct 24 20:16:01 2019
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,Fitter Location,Reserved
+CAPS,Output,PIN_56,PIN_56,
+CK_RTCAL,Output,PIN_48,PIN_48,
+CLK,Input,PIN_51,PIN_51,
+CPU_INTb,Output,PIN_45,PIN_45,
+IORQb,Input,PIN_30,PIN_30,
+M1b,Input,PIN_34,PIN_34,
+MREQb,Input,PIN_31,PIN_31,
+PB[7],Input,PIN_67,PIN_67,
+PB[6],Input,PIN_68,PIN_68,
+PB[5],Input,PIN_70,PIN_70,
+PB[4],Input,PIN_76,PIN_76,
+PB[3],Input,PIN_69,PIN_69,
+PB[2],Input,PIN_64,PIN_64,
+PB[1],Input,PIN_73,PIN_73,
+PB[0],Input,PIN_74,PIN_74,
+PG1RDb,Output,PIN_5,PIN_5,
+PG2RDb,Output,PIN_6,PIN_6,
+PG12RDb,Output,PIN_10,PIN_10,
+PSGBC1,Output,PIN_41,PIN_41,
+PSGBDIR,Output,PIN_44,PIN_44,
+PSG_CLK,Output,PIN_55,PIN_55,
+RAMA[1],Output,PIN_21,PIN_21,
+RAMA[0],Output,PIN_22,PIN_22,
+RAM_CS0b,Output,PIN_20,PIN_20,
+RAM_CS1b,Output,PIN_27,PIN_27,
+RDb,Input,PIN_33,PIN_33,
+RFSHb,Input,PIN_28,PIN_28,
+ROMA[1],Output,PIN_36,PIN_36,
+ROMA[0],Output,PIN_35,PIN_35,
+ROM_OEb,Output,PIN_37,PIN_37,
+RSTb,Input,PIN_1,PIN_1,
+RTCCSb,Output,PIN_50,PIN_50,
+SLT_INTb,Input,PIN_83,PIN_83,
+SLTbo[3],Output,PIN_57,PIN_57,
+SLTbo[2],Output,PIN_58,PIN_58,
+SLTbo[1],Output,PIN_8,PIN_8,
+SPK,Output,PIN_54,PIN_54,
+TCK,Input,,PIN_62,
+TDI,Input,,PIN_14,
+TDO,Output,,PIN_71,
+TMS,Input,,PIN_23,
+VDP_CSRb,Output,PIN_40,PIN_40,
+VDP_CSWb,Output,PIN_39,PIN_39,
+VDP_INTb,Input,PIN_46,PIN_46,
+WRb,Input,PIN_29,PIN_29,
+addr13_8b,Input,PIN_49,PIN_49,
+addrH[15],Input,PIN_24,PIN_24,
+addrH[14],Input,PIN_25,PIN_25,
+addrL[7],Input,PIN_75,PIN_75,
+addrL[6],Input,PIN_77,PIN_77,
+addrL[5],Input,PIN_80,PIN_80,
+addrL[4],Input,PIN_4,PIN_4,
+addrL[3],Input,PIN_79,PIN_79,
+addrL[2],Input,PIN_81,PIN_81,
+addrL[1],Input,PIN_84,PIN_84,
+addrL[0],Input,PIN_2,PIN_2,
+data[7],Bidir,PIN_9,PIN_9,
+data[6],Bidir,PIN_12,PIN_12,
+data[5],Bidir,PIN_15,PIN_15,
+data[4],Bidir,PIN_17,PIN_17,
+data[3],Bidir,PIN_18,PIN_18,
+data[2],Bidir,PIN_16,PIN_16,
+data[1],Bidir,PIN_52,PIN_52,
+data[0],Bidir,PIN_11,PIN_11,
+keyMAT[3],Output,PIN_61,PIN_61,
+keyMAT[2],Output,PIN_60,PIN_60,
+keyMAT[1],Output,PIN_63,PIN_63,
+keyMAT[0],Output,PIN_65,PIN_65,

@@ -1,0 +1,319 @@
+Analysis & Synthesis report for Retrocon
+Sun Dec 22 21:29:41 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. Port Connectivity Checks: "ramMapper:xrMapper"
+ 12. Port Connectivity Checks: "PPI8255_SLT:xPPI"
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++-----------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Dec 22 21:29:41 2019           ;
+; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name               ; Retrocon                                        ;
+; Top-level Entity Name       ; Retrocon                                        ;
+; Family                      ; MAX7000S                                        ;
+; Total macrocells            ; 109                                             ;
+; Total pins                  ; 64                                              ;
++-----------------------------+-------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Option                                                                     ; Setting         ; Default Value ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Device                                                                     ; EPM7128SLC84-10 ;               ;
+; Top-level entity name                                                      ; Retrocon        ; Retrocon      ;
+; Family name                                                                ; MAX7000S        ; Cyclone IV GX ;
+; Use smart compilation                                                      ; Off             ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On              ; On            ;
+; Enable compact report table                                                ; Off             ; Off           ;
+; Create Debugging Nodes for IP Cores                                        ; Off             ; Off           ;
+; Preserve fewer node names                                                  ; On              ; On            ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off             ; Off           ;
+; Verilog Version                                                            ; Verilog_2001    ; Verilog_2001  ;
+; VHDL Version                                                               ; VHDL_1993       ; VHDL_1993     ;
+; State Machine Processing                                                   ; Auto            ; Auto          ;
+; Safe State Machine                                                         ; Off             ; Off           ;
+; Extract Verilog State Machines                                             ; On              ; On            ;
+; Extract VHDL State Machines                                                ; On              ; On            ;
+; Ignore Verilog initial constructs                                          ; Off             ; Off           ;
+; Iteration limit for constant Verilog loops                                 ; 5000            ; 5000          ;
+; Iteration limit for non-constant Verilog loops                             ; 250             ; 250           ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On              ; On            ;
+; Infer RAMs from Raw Logic                                                  ; On              ; On            ;
+; Parallel Synthesis                                                         ; On              ; On            ;
+; NOT Gate Push-Back                                                         ; On              ; On            ;
+; Power-Up Don't Care                                                        ; On              ; On            ;
+; Remove Duplicate Registers                                                 ; On              ; On            ;
+; Ignore CARRY Buffers                                                       ; Off             ; Off           ;
+; Ignore CASCADE Buffers                                                     ; Off             ; Off           ;
+; Ignore GLOBAL Buffers                                                      ; Off             ; Off           ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off             ; Off           ;
+; Ignore LCELL Buffers                                                       ; Auto            ; Auto          ;
+; Ignore SOFT Buffers                                                        ; Off             ; Off           ;
+; Limit AHDL Integers to 32 Bits                                             ; Off             ; Off           ;
+; Optimization Technique                                                     ; Speed           ; Speed         ;
+; Allow XOR Gate Usage                                                       ; On              ; On            ;
+; Auto Logic Cell Insertion                                                  ; On              ; On            ;
+; Parallel Expander Chain Length                                             ; 4               ; 4             ;
+; Auto Parallel Expanders                                                    ; On              ; On            ;
+; Auto Open-Drain Pins                                                       ; On              ; On            ;
+; Auto Resource Sharing                                                      ; Off             ; Off           ;
+; Maximum Fan-in Per Macrocell                                               ; 100             ; 100           ;
+; Use LogicLock Constraints during Resource Balancing                        ; On              ; On            ;
+; Ignore translate_off and synthesis_off directives                          ; Off             ; Off           ;
+; Report Parameter Settings                                                  ; On              ; On            ;
+; Report Source Assignments                                                  ; On              ; On            ;
+; Report Connectivity Checks                                                 ; On              ; On            ;
+; HDL message level                                                          ; Level2          ; Level2        ;
+; Suppress Register Optimization Related Messages                            ; Off             ; Off           ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000            ; 5000          ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000            ; 5000          ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100             ; 100           ;
+; Block Design Naming                                                        ; Auto            ; Auto          ;
+; Synthesis Effort                                                           ; Auto            ; Auto          ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On              ; On            ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off             ; Off           ;
+; Analysis & Synthesis Message Level                                         ; Medium          ; Medium        ;
+; Disable Register Merging Across Hierarchies                                ; Auto            ; Auto          ;
+; Synthesis Seed                                                             ; 1               ; 1             ;
++----------------------------------------------------------------------------+-----------------+---------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; ramMapper.v                      ; yes             ; User Verilog HDL File  ; D:/Work.Quartus/RetroCon_EPM7128.20191221/ramMapper.v   ;         ;
+; slotExp.v                        ; yes             ; User Verilog HDL File  ; D:/Work.Quartus/RetroCon_EPM7128.20191221/slotExp.v     ;         ;
+; Retrocon.v                       ; yes             ; User Verilog HDL File  ; D:/Work.Quartus/RetroCon_EPM7128.20191221/Retrocon.v    ;         ;
+; PPI8255_SLT.v                    ; yes             ; User Verilog HDL File  ; D:/Work.Quartus/RetroCon_EPM7128.20191221/PPI8255_SLT.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++----------------------+----------------------+
+; Resource             ; Usage                ;
++----------------------+----------------------+
+; Logic cells          ; 109                  ;
+; Total registers      ; 52                   ;
+; I/O pins             ; 64                   ;
+; Shareable expanders  ; 9                    ;
+; Parallel expanders   ; 15                   ;
+; Maximum fan-out node ; addrL[0]             ;
+; Maximum fan-out      ; 85                   ;
+; Total fan-out        ; 1443                 ;
+; Average fan-out      ; 7.93                 ;
++----------------------+----------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                          ;
++----------------------------+------------+------+------------------------------+--------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name          ; Library Name ;
++----------------------------+------------+------+------------------------------+--------------+
+; |Retrocon                  ; 109        ; 64   ; |Retrocon                    ; work         ;
+;    |PPI8255_SLT:xPPI|      ; 28         ; 0    ; |Retrocon|PPI8255_SLT:xPPI   ; work         ;
+;    |ramMapper:xrMapper|    ; 25         ; 0    ; |Retrocon|ramMapper:xrMapper ; work         ;
+;    |slotExp:xsltExp_0|     ; 8          ; 0    ; |Retrocon|slotExp:xsltExp_0  ; work         ;
++----------------------------+------------+------+------------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; PPI8255_SLT:xPPI|EN153                             ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; ramMapper:xrMapper|regFC[5]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFD[5]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFE[5]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFF[5]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFC[6]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFD[6]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFE[6]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFF[6]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFC[7]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFD[7]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFE[7]            ; Stuck at GND due to stuck port data_in ;
+; ramMapper:xrMapper|regFF[7]            ; Stuck at GND due to stuck port data_in ;
+; PPI8255_SLT:xPPI|regCTRL[7]            ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 13 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                      ;
++-----------------------------+---------------------------+----------------------------------------+
+; Register name               ; Reason for Removal        ; Registers Removed due to This Register ;
++-----------------------------+---------------------------+----------------------------------------+
+; ramMapper:xrMapper|regFC[7] ; Stuck at GND              ; PPI8255_SLT:xPPI|regCTRL[7]            ;
+;                             ; due to stuck port data_in ;                                        ;
++-----------------------------+---------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ramMapper:xrMapper"                                                                                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; DIN      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (5 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; MO[7..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PPI8255_SLT:xPPI"                                                                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; CSb      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SLTb[3]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; PC[5..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Dec 22 21:29:39 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Retrocon -c Retrocon
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file rammapper.v
+    Info (12023): Found entity 1: ramMapper
+Info (12021): Found 1 design units, including 1 entities, in source file ppi8255.v
+    Info (12023): Found entity 1: PPI8255
+Info (12021): Found 1 design units, including 1 entities, in source file slotexp.v
+    Info (12023): Found entity 1: slotExp
+Info (12021): Found 1 design units, including 1 entities, in source file retrocon.v
+    Info (12023): Found entity 1: Retrocon
+Info (12021): Found 1 design units, including 1 entities, in source file ppi8255_slt.v
+    Info (12023): Found entity 1: PPI8255_SLT
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(52): created implicit net for "SEL_PPI"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(69): created implicit net for "IOMM"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(84): created implicit net for "ADFFFF"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(92): created implicit net for "outSSREG"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(104): created implicit net for "IORQ"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(108): created implicit net for "IOC2F"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(109): created implicit net for "IO82B"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(112): created implicit net for "IO98"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(113): created implicit net for "IOA0"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(114): created implicit net for "IOA8"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(115): created implicit net for "IOB0"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(116): created implicit net for "IOB8"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(119): created implicit net for "SEL_PSG"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(120): created implicit net for "SEL_RTC"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(121): created implicit net for "SEL_VDP"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(124): created implicit net for "IOF0"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(125): created implicit net for "IOSYS"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(128): created implicit net for "CLK_IOSYS"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(135): created implicit net for "RTCEN"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(136): created implicit net for "RTCDEC"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(147): created implicit net for "PG0RDb"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(155): created implicit net for "ROM_OEb1"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(156): created implicit net for "ROM_OEb2"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(157): created implicit net for "ROM_OEb3"
+Warning (10236): Verilog HDL Implicit Net warning at Retrocon.v(206): created implicit net for "enDOBUF"
+Warning (10236): Verilog HDL Implicit Net warning at PPI8255_SLT.v(97): created implicit net for "ENSLT"
+Info (12127): Elaborating entity "Retrocon" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Retrocon.v(116): object "IOB8" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Retrocon.v(120): object "SEL_RTC" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Retrocon.v(150): truncated value with size 8 to match size of target (5)
+Info (10264): Verilog HDL Case Statement information at Retrocon.v(210): all case item expressions in this case statement are onehot
+Warning (10230): Verilog HDL assignment warning at Retrocon.v(218): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "PPI8255_SLT" for hierarchy "PPI8255_SLT:xPPI"
+Warning (10240): Verilog HDL Always Construct warning at PPI8255_SLT.v(74): inferring latch(es) for variable "EN153", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "EN153" at PPI8255_SLT.v(77)
+Info (12128): Elaborating entity "ramMapper" for hierarchy "ramMapper:xrMapper"
+Info (12128): Elaborating entity "slotExp" for hierarchy "slotExp:xsltExp_0"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ROMA[2]" is stuck at GND
+Info (280013): Promoted pin-driven signal(s) to global signal
+    Info (280015): Promoted clear signal driven by pin "RSTb" to global clear signal
+Info (21057): Implemented 182 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 28 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21063): Implemented 109 macrocells
+    Info (21073): Implemented 9 shareable expanders
+Info (144001): Generated suppressed messages file D:/Work.Quartus/RetroCon_EPM7128.20191221/Retrocon.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 35 warnings
+    Info: Peak virtual memory: 4573 megabytes
+    Info: Processing ended: Sun Dec 22 21:29:41 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Work.Quartus/RetroCon_EPM7128.20191221/Retrocon.map.smsg.
+
+
